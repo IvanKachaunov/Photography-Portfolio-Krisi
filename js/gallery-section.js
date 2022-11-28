@@ -97,15 +97,15 @@ videos.onclick = function (){
     }
 };
 
-window.onscroll = function() {
-  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    document.querySelector(".top-nav").style.background = "rgb(28, 28, 28)"
-    document.querySelector("#Items").style.background = "rgb(28, 28, 28)"
-  } else {    
-    // document.querySelector(".top-nav").style.padding = "30px 0px"
-    document.querySelector(".top-nav").style.background = "linear-gradient(to bottom, black 0%, transparent 100%)"
-    document.querySelector("#Items").style.background = "none"
-  }
+// window.onscroll = function() {
+//   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+//     document.querySelector(".top-nav").style.background = "rgb(28, 28, 28)"
+//     document.querySelector("#Items").style.background = "rgb(28, 28, 28)"
+//   } else {    
+//     // document.querySelector(".top-nav").style.padding = "30px 0px"
+//     document.querySelector(".top-nav").style.background = "linear-gradient(to bottom, black 0%, transparent 100%)"
+//     document.querySelector("#Items").style.background = "none"
+//   }
 
 //   if (document.body.scrollTop > 850 || document.documentElement.scrollTop > 850) {
 //     document.querySelector(".top-nav").style.background = "linear-gradient(to bottom, black 0%, transparent 100%)"
@@ -117,8 +117,8 @@ window.onscroll = function() {
 //     document.querySelector(".top-nav").style.background = "linear-gradient(to bottom, black 0%, transparent 100%)"
 // }, 4000);
 
+// }
 };
-}
 
 //Stefcho code
 

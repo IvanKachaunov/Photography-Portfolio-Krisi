@@ -6,27 +6,87 @@
 }
 
 .logo{
-    padding: 25px;
-    margin-left: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    /* padding: 25px; */
+    margin-left: 20px;
     cursor: pointer;
 }
 
-/* background: -webkit-gradient(linear, left top, left bottom, from(black), to(transparent));
-background: linear-gradient(to bottom, black 0%, transparent 100%); */
+.logo img{
+    height: 80px;
+}  
 
 .top-nav{
     display: flex;
+    /* justify-content: space-between; */
     align-items: center;
-    height: 95px;
+    padding: 40px 40px;
+    /* height: 95px; */
     width: 100%;
     /* background-color: rgb(28, 28, 28); */
     background: linear-gradient(to bottom, black 0%, transparent 100%);
+        /* background: linear-gradient(to bottom, black 0%, black 100%); */
     opacity: 0.80;
     position: fixed;
     top: 0;
     z-index: 999;
-    transition: 0.2s;
+    transition: 0.3s;
+    /* padding-top: 30px; */
 }
+
+.top-nav.scrolledIn {
+    /* FF3.6-15 */
+    /* Chrome10-25,Safari5.1-6 */
+    /* background: (linear, left top, left bottom, from(black), to(black));
+    background: linear-gradient(to bottom, black 0%, black 100%); */
+    background-color: rgb(28, 28, 28);
+    /* padding: 40px 40px; */
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    /* padding: 0; */
+    padding: 10px 40px;
+    -webkit-transition: .3s all;
+    transition: .3s all;
+  }
+  
+  .top-nav.collapsing-menu-up {
+    -webkit-transition: .3s all;
+    transition: .3s all;
+    /* padding-top: 30px; */
+    padding: 40px 40px;
+    /* FF3.6-15 */
+    /* Chrome10-25,Safari5.1-6 */
+    background: -webkit-gradient(linear, left top, left bottom, from(black), to(transparent));
+    background: linear-gradient(to bottom, black 0%, transparent 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  }
+  
+  .top-nav.collapsing-menu-down {
+    /* FF3.6-15 */
+    /* Chrome10-25,Safari5.1-6 */
+    /* background: -webkit-gradient(linear, left top, left bottom, from(black), to(black));
+    background: linear-gradient(to bottom, black 0%, black 100%); */
+    background-color: rgb(28, 28, 28);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    /* padding: 12px 0; */
+    padding: 10px 40px; 
+    -webkit-transition: .3s all;
+    transition: .3s all;
+  }
+  
+  .top-nav.scrolling-up {
+    /* FF3.6-15 */
+    /* Chrome10-25,Safari5.1-6 */
+    background: -webkit-gradient(linear, left top, left bottom, from(black), color-stop(70%, rgba(0, 0, 0, 0.7)));
+    background: linear-gradient(to bottom, black 0%, rgba(0, 0, 0, 0.7) 70%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    padding: 40px 40px;
+    -webkit-transition: .3s all;
+    transition: .3s all;
+    /* padding-top: 20px 40px; */
+  }
 
 /* collapsing-menu-down */
 .top-nav-links a{
@@ -49,7 +109,7 @@ background: linear-gradient(to bottom, black 0%, transparent 100%); */
     display: flex;
     width: 100%;
     justify-content: end;
-    margin-right: 155px;
+    margin-right: 110px;
 }
 
 #Items{
@@ -72,50 +132,119 @@ background: linear-gradient(to bottom, black 0%, transparent 100%); */
 .image-background{
     display: flex;
     height: 100vh;
+    padding: 0 80px;
     width: 100%;
-    justify-content: center;
-    align-items: center;
+    justify-content: end;
+    flex-direction: column;
+    align-items: flex-start;
     /* background-image: url(/img/background-header-image/lightroom\ edited.jpg);  */
     /* background-image: url(/img/background-header-image/IMG_6062-2.jpg); */
-    background-image: url(./img/background-header-image/IMG_6062-2.jpg);
+    background-image: url(./img/PORTUGAL_NOTHOT-30.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-/*  */
-.image-filter{
-    height: 275vh;
-    background-color: rgb(245, 245, 245);
+.image-background h3{
+    width: 28%;
+    padding-bottom: 10px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.image-background a{
+    position: relative;
+    display: flex;
+    /* align-items: flex-start; */
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #c19663;
+    font-family: "Roboto Regular";
+    letter-spacing: 1px;
+    font-size: 17px;
+    font-weight: bold;
+    border: 3px solid #c19663;
+    /* position: relative; */
+    padding: 15px 40px;
+    margin-bottom: 100px;
+    transition: 0.2s all;
+}
+
+.image-background a:hover{
+    color: white;
+    border-color: white;
+    transition: 0.2s ease all;
+}
+
+.image-background a:hover::before {
+    border: 3px solid #1cc59d;
+    -webkit-transition: .3s;
+    transition: .3s;
+    /* top: 1.5px;
+    left: 2px; */
+  }
+  
+.image-background a:hover::after {
+    /* top: 37%;
+    left: 51%; */
+    color: rgba(0, 255, 225, 0.5);
+  }
+  
+.image-background a::before {
+    content: '';
+    position: absolute;
+    width: 103%;
+    height: 114%;
+    top: 0;
+    left: 0;
+    border: 3px solid rgba(0, 255, 255, 0);
+    -webkit-transition: .3s;
+    transition: .3s;
+  }
+  
+.image-background a::after {
+    /* content: 'BOOK A TABLE'; */
+    position: absolute;
+    top: 33%;
+    left: 50%;
+    width: 59%;
+    -webkit-transition: .3s;
+    transition: .3s;
+    -webkit-transform: translateX(-50%);
+}
+
+.oneline-galleryInfo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 40px;
 }
 
 .gallery-title{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 15px;
-    padding-top: 55px;
     font-size: 28px;
     font-family: monospace;
     font-family: 'Dancing Script', cursive;
+    /* font-family: 'Poppins', sans-serif; */
     text-transform: uppercase;
-    background-color: rgb(245, 245, 245);
+    /* background-color: rgb(245, 245, 245); */
     letter-spacing: 2px;
-    width: 100%;
+    /* width: 100%; */
 }
 
 .dropdown{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center; */
+    /* align-items: center; */
     font-size: 22px;
     font-family: 'Poppins', sans-serif;
     background-color: rgb(245, 245, 245);
     /* width: 1500px; */
     /* margin-left: 17px; */
-    padding-bottom: 30px;
-    padding-top: 10px;
-    width: 100%;
+    /* padding-bottom: 30px; */
+    /* padding-top: 10px; */
+    /* width: 100%; */
 }
 
 .dropdown a{
@@ -141,11 +270,11 @@ background: linear-gradient(to bottom, black 0%, transparent 100%); */
 
 .gallery-filters{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center; */
+    /* align-items: center; */
     list-style: none;
-    background-color: rgb(245, 245, 245);
-    width: 100%;
+    /* background-color: rgb(245, 245, 245); */
+    /* width: 100%; */
 }
 
 .gallery-filters a{
@@ -167,16 +296,6 @@ background: linear-gradient(to bottom, black 0%, transparent 100%); */
     padding-right: 30px;
 }
 
-/* .active{
-    color: rgb(197, 115, 22);
-    transition: 0.2s ease all;
-} */
-
-/* .Active{
-    color: rgb(197, 115, 22);
-    transition: 0.2s ease all;
-} */
-
 .gallery-filters a:hover{
     color: rgb(197, 115, 22);
     /* color: rgb(0, 174, 255); */
@@ -188,14 +307,13 @@ background: linear-gradient(to bottom, black 0%, transparent 100%); */
 
 .gallery{
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: space-between;
     /* padding: 50px 0.5px 0.5px 0.5px; */
     /* animation: animate 1s ease forward; */
-    height: 100vh;
+    padding: 10px 40px 10px 40px;
     width: 100%;
-    background-color: rgb(245, 245, 245);
+    /* background-color: rgb(245, 245, 245); */
     transition: 0.2s ease all;
 }
 
@@ -203,13 +321,9 @@ background: linear-gradient(to bottom, black 0%, transparent 100%); */
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 45px 2.5px 0px 2.5px;
-    /* margin-left: 12px; */
-    /* flex-direction: column; */
+    justify-content: center;
     /* flex-wrap: wrap; */
-    /* align-items: center; */
     width: 33%;
-    height: 1520px
 }
 
 .photo{
@@ -218,260 +332,179 @@ background: linear-gradient(to bottom, black 0%, transparent 100%); */
     padding-bottom: 5px;
 }
 
-.gallery{
-    object-fit: cover;
-    /* flex-wrap: wrap; */
-    -o-object-fit: cover;
-    /* width: calc(100% - 0.25rem); */
-    height: auto;
-}
-
 .gallery img:hover{
     cursor: pointer;
-    /* transition: 0.2s ease-out; */
-    /* transform: scale(1.06); */
-    /* opacity: 0.5; */
 }
 
-.About{
-    background-color: rgb(238, 238, 238);
-    /* background-image: linear-gradient(to bottom right, rgb(238, 238, 238) , #f0a00b); */
-    height: 752.5px;
+.top-curves-container{
+    background-image: url("img/curves/layered-waves-haikei\ \(24\).svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-repeat: no-repeat; */
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    /* width: 100%; */
+    padding: 170px 80px;
 }
 
-.image{
-    width: 450px;
-    height: 580px;
+.blackCard{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+    height: 300px;
+    padding: 20px 40px;
+}
+
+.blackCardText{
+    color: white;
+    position: relative;
+    /* height: 100%; */
+    width: 30%;
+}
+
+.blackCardText p{
+    /* position: absolute; */
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    font-size: 15px;
+    font-family: "Poppins";
+    text-transform: uppercase;
+}
+
+.blackCardImage{
+    background-image: url(./img/background-header-image/IMG_6062-2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 35%;
+    height: 100%;
+}
+
+.About{
+    background-color: rgb(245, 245, 245);
+    background-image: url("img/curves/layered-waves-haikei\ \(6\).svg");
+    background-size: cover;
+    /* background-repeat: no-repeat; */
+    /* background-repeat: repeat-y; */
+    width: 100%;
+    /* background-image: linear-gradient(to bottom right, rgb(238, 238, 238) , #f0a00b); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 100%; */
+    padding: 110px 80px;
 }
 
 .About img{
     border-radius: 5px;
-    width: 450px;
-    height: 580px;
-    margin-left: 40px;
-    margin-top: 20px;
-}
-
-.info{
-    font-family: 'Poppins', sans-serif;
-    padding: 80px;
-    margin-bottom: 60px;
-}
-
-.info h2{
-    text-transform: uppercase;
-    color: rgb(54, 54, 54);
-    position: relative;
-    bottom: 80px;
-    left: 2px;
-    font-weight: 100px;
-}
-
-.info p{
-    margin-bottom: 40px;
-    margin-top: 40px;
-    height: 100px;
-    position: relative;
-    bottom: 80px;
-    width: 420px;
-    font-size: 17.5px;
-    /* text-align: right; */
-}
-
- .first-quote{
-    font-size: 2rem;
-    color: rgb(46, 46, 46);
-    position: relative;
-    top: 117.5px;
-    right: 220px;
-    text-align: right;
-    /* color: rgb(224, 156, 28); */
-}
-
-.second-quote{
-    font-size: 2rem;
-    color: rgb(46, 46, 46);
-    position: relative;
-    top: 155px;
-    right: 10px;
-    text-align: right;
-    /* color: rgb(224, 156, 28); */
+    width: 30%;
+    height: 100%;
+    cursor: pointer;
+    /* margin-left: 40px;
+    margin-top: 20px; */
 }
 
 .social-media-links{
+    /* height: 110px; */
     display: flex;
-    flex-direction: column;
-    height: 100vh;  
-    justify-content: center;
-    align-items: center;
+    width: 70%;
+    justify-content: space-between;
+    align-items: flex-end;
     font-size: 25px;
 }
 
+.social-media-links img{
+    width: 35px;
+    height: 35px;
+    animation: animateCherryDeck 7s ease-in-out infinite;
+}
+
 .bi-facebook{
-    width: 32px;
-    height: 32px;
+    width: 35px;
+    height: 35px;
     /* margin-bottom: 60px; */
     cursor: pointer;
     /* color: rgb(44, 22, 102); */
-}
-
-.CherryDeck-logo{
-    width: 5px;
-    height: 5px;
-    cursor: pointer;
+    animation: animateFacebook 7s ease-in-out infinite;
 }
 
 .bi-instagram{
-    width: 32px;
-    height: 32px;
+    width: 35px;
+    height: 35px;
     /* margin-bottom: 190px; */
     cursor: pointer;
+    /* background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%); */
+    border-radius: 30%;
     /* color: rgb(123, 33, 141); */
+    animation: animateInstagram 7s ease-in-out infinite;
 }
 
-/* forms */
-
-.form-section {
+.form-section{
     display: flex;
+    background-color: rgb(237, 237, 237);
     justify-content: center;
     align-items: center;
-    /* background-image: linear-gradient(to bottom right, rgb(250, 240, 156), rgb(240, 186, 10), rgb(250, 116, 6)); */
-    background-color: rgb(31, 31, 31);
-    background-image: url(../img/cover.svg);
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 800px;
-    padding: 15px;
-}
-
-.form{
-    display: flex;
-    height: 525px;
-    width: 600px;
-    background-color: rgb(236, 236, 236);
-    /* border-radius: 20px; */
-    justify-content: center;
-    border: 1px solid rgb(171, 171, 171);
-    /* align-items: center; */
-    /* box-shadow: 6px 6px 8px rgb(49, 49, 49); */
-    position: relative;
-}
-
-form h3{
-    font-family: 'Poppins', sans-serif;
-    font-family: sans-serif;
-    font-size: 30px;
-    font-weight: 300;
-    margin-bottom: 40px;
     text-align: center;
-    /* color: rgb(211, 144, 19); */
+    padding: 160px 80px;
 }
 
-textarea{
-    border-radius: 20px;
-    background-color: rgb(216, 214, 214);
-    padding: 12px;
-    margin-bottom: 4px;
-    width: 220px;
-    border: none;
-    resize: none;
-    height: 125px;
-}
-
-.form input{
-    border-radius: 20em;
-    padding: 14px;
-    margin-bottom: 6px;
-    background-color: rgb(216, 214, 214);
-    width: 220px;
-    border: none;
-}
-
-#email{
-    border: none;
-    outline: none;
-}
-
-#name{
-    border: none;
-    outline: none;
-}
-
-#textarea{
-    border: none;
-    outline: none;
-}
-
-#email:focus{
-    box-shadow: rgb(250, 212, 156) 0px 7px 29px 0px;
-    /* rgb(250, 240, 156) */
-}
-
-#name:focus{
-    box-shadow: rgb(250, 212, 156) 0px 7px 29px 0px;
-    /* rgb(250, 240, 156) */
-}
-
-#textarea:focus{
-    box-shadow: rgb(250, 212, 156) 0px 7px 29px 0px;
-    /* rgb(250, 240, 156) */
-}
-
-.form button{
-    cursor: pointer;
-    width: 95px;
-    border-radius: 15px;
-    border: none;
-    background-color: rgb(255, 166, 0);
-    padding: 10px;
-    color: rgb(240, 235, 235);
+.form-section h3{
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 30px;
     font-family: 'Poppins', sans-serif;
-    margin-top: 2px;
+    font-weight: 100;
+}
+
+.form-section input{
+    padding: 12px;
+    margin: 0 0 20px 0;
+    outline: none;
+    background-color: rgb(237, 237, 237);
+    border: transparent;
+    border-bottom: 1px solid black;
+}
+
+.form-section textarea{
+    margin-top: 10px;
+    padding: 12px;
+    width: 185px;
+    height: 100px;
+    outline: none;
+    background-color: rgb(237, 237, 237);
+    border: transparent;
+    border-bottom: 1px solid black;
+}
+
+.form-section input:focus{
+    border-bottom: 1px solid rgb(197, 115, 22);
+}
+
+.form-section textarea:focus{
+    border-bottom: 1px solid rgb(197, 115, 22);
+}
+
+.form-section button{
+    cursor: pointer;
+    text-align: center;
+    border: transparent;
+    color: #fff;
+    background-color: black;
     height: 40px;
-    position: absolute;
-    top: 104%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.form button::after{
-    content: 'Submit';
-}
-/* 
-.form button:hover::after{
-    content: 'Submit 📸';
-} */
-
-/* .form button:hover span{
-    opacity: 0;
-    transform: scale(0.3);
-} */
-
-form{
-    margin-bottom: 70px;
-    /* margin-left: 20px; */
-    position: absolute;
-    top: 48%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding-bottom: 25px;
+    width: 120px;
+    margin-top: 20px;
 }
 
 /* foooter section */
 .footer-section{
-    height: 80px;
+    padding: 30px 20px;
     background-color: rgb(61, 59, 59);
     width: 100%;
-    font-size: 20px;
+    font-size: 18px;
     text-align: center;
     position: relative;
     /* opacity: 0.95; */
@@ -479,7 +512,7 @@ form{
 
 .paragraph{
   position: absolute;
-  top: 35%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%,-50%);
   color: rgb(236, 236, 236);
@@ -513,3377 +546,59 @@ color: rgb(236, 236, 236);
     width: 25px;
     margin: 5px;
 }
-  
-/* gallery slider */
 
-  .gallery:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
-  /* The Modal (background) */
-  .modal {
-    display: none;
-    position: fixed;
-    z-index: 999;
-    padding-top: 100px;
-    left: 0%;
-    top: 0%;
-    width: 100%;
-    height: 100%;
-    /* overflow: auto; */
-    background-color: rgba(43, 42, 42, .7);
+@keyframes animateInstagram {
+    0%, 100% {
+        transform: translateY(0) rotate(-6deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(8deg);
+    }
 }
 
-/* Modal Content */
-.modal-content {
-    position: relative;
-    background-color: #fefefe;
-    margin: auto;
-    /* padding: 0; */
-    height: 50%;
-    width: 70%;
-    z-index: 999;
-    /* max-width: 1200px; */
-  }
-  
-  /* The Close Button */
-  .close {
-    color: white;
-    position: absolute;
-    top: 10px;
-    right: 25px;
-    font-size: 35px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: #999;
-    text-decoration: none;
+@keyframes animateFacebook {
+    0%, 100% {
+        transform: translateY(0) rotate(6deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(-8deg);
+    }
+}
+
+@keyframes animateCherryDeck  {
+    0%, 100% {
+        transform: translate(0, -10px) rotate(6eg);
+    }
+    50% {
+        transform: translate(-20px, 15px) rotate(-8deg);
+    }
+}
+
+/* For mobile and tablet */
+
+/* .hamburger-menu{
+    display: block;
+    margin-right: 50px;
     cursor: pointer;
-  }
-  
-  .mySlides {
-    display: none;
-  }
-  
-  .cursor {
-    cursor: pointer;
-  }
-
-  /* Next & previous buttons */
-.prev,
-.next {
-  cursor: pointer;
-  position: absolute;
-  top: 100%;
-  width: auto;
-  padding: 16px;
-  margin-top: -50px;
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  -webkit-user-select: none;
+}
+.hamburger-menu .line{
+    display: block;
+    background-color: #fafafa;
+    height: 3px;
+    width: 25px;
+    margin: 5px;
+}
+.hamburger-menu.active .line:nth-child(1) {
+transition: 0.2s ease all;
+transform: translateY(8px) rotate(45deg);
 }
 
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
+.hamburger-menu.active .line:nth-child(2) {
+opacity: 0;
 }
 
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* .caption-container {
-  text-align: center;
-  background-color: black;
-  padding: 2px 16px;
-  color: white;
-  height: 20px;
+.hamburger-menu.active .line:nth-child(3) {
+transition: 0.2s ease all;
+transform: translateY(-8px) rotate(-45deg);
 } */
 
-/* @keyframes animate { 
-    from {
-      opacity: 0;
-      pointer-events: none;
-    }
-   to {
-     opacity: 1;
-     pointer-events: all;
-   }
-} */
-
-@media only screen and (max-width: 1440px){
-
-    .logo{
-        padding: 10px;
-        margin-left: 15px;
-    }
-    
-    .top-nav{
-        height: 85px;
-        max-width: 1440px;
-        top: 0;
-    }
-
-    .top-nav-links a{
-        font-size: 14px;
-    }
-
-    .top-nav-links{
-        max-width: 1440px;
-        margin-right: 150px;
-    }
-
-    .image-background{
-        max-width: 1440px;
-        /* height: 700px; */
-    }
-
-    .gallery-title{
-        font-size: 25px;
-        letter-spacing: 2px;
-        max-width: 1440px;
-    }
-    
-    .dropdown{
-        font-size: 20px;
-        max-width: 1440px;
-    }
-
-    .gallery-filters{
-        max-width: 1440px;
-    }
-    
-    .gallery-filters a{
-        font-size: 17px;
-    }
-
-    .gallery{
-        max-width: 1440px;
-        height: auto;
-    }
-
-    .column{
-        width: 33%;
-        height: 1520px
-    }
-    
-    .photo{
-        width: 100%;
-        height: auto;
-        padding-bottom: 5px;
-    }
-
-    .image-filter{
-        height: 295vh;
-    }
-
-    .About{
-        max-width: 1440px;
-    }
-
-    .image{
-        width: 450px;
-        height: 580px;
-    }
-    
-    .About img{
-        border-radius: 5px;
-        width: 100%;
-        height: 580px;
-        margin-left: 30px;
-        margin-top: 10px;
-    }
-
-    .info{
-        font-family: 'Poppins', sans-serif;
-        padding: 80px;
-        margin-bottom: 60px;
-    }
-    
-    .info h2{
-        text-transform: uppercase;
-        color: rgb(54, 54, 54);
-        position: relative;
-        bottom: 80px;
-        left: 2px;
-        font-weight: 100px;
-    }
-    
-    .info p{
-        font-size: 17px;
-    }
-    
-    .first-quote{
-        font-size: 1.45rem;
-        position: relative;
-        top: 117.5px;
-        right: 170px;
-    }
-    
-    .second-quote{
-        font-size: 1.45rem;
-        position: relative;
-        top: 155px;
-        right: 25px;
-        /* width: 400px; */
-    }
-    
-    .form-section {
-        max-width: 1440px;
-        height: 700px;
-        padding: 13px;
-    }
-    
-    form h3{
-        font-size: 27px;
-        /* padding-bottom: 18px; */
-        margin-right: 0px;
-    }
-    
-    textarea{
-        padding: 10px;
-        margin-bottom: 2px;
-        width: 200px;
-    }
-    
-    .form input{
-        padding: 12px;
-        margin-bottom: 4px;
-        width: 200px;
-    }
-    
-    .form button{
-        /* width: 200px; */
-        padding: 8px;
-        margin-top: 2px;
-    }
-    
-    .form{
-        /* margin-bottom: 30px; */
-        width: 500px;
-        height: 475px;
-    }
-
-    .footer-section{
-        height: 78px;
-        max-width: 1440px;
-        font-size: 20px;
-    }
-    
-}
-
-@media only screen and (max-width: 1350px){
-
-    .logo{
-        padding: 10px;
-        margin-left: 15px;
-    }
-    
-    .top-nav{
-        height: 85px;
-        max-width: 1350px;
-        top: 0;
-    }
-
-    .top-nav-links a{
-        font-size: 14px;
-    }
-
-    .top-nav-links{
-        max-width: 1350px;
-        margin-right: 100px;
-    }
-
-    #Items{
-        /* display: none; */
-        position: absolute;
-        top: 64px;
-        /* display: flex; */
-        width: 1350px;
-        height: 150px;
-        /* background-color: rgb(51, 50, 50); */
-        background-color: linear-gradient(to bottom, black 0%, transparent 100%);
-    }
-
-    .image-background{
-        max-width: 1350px;
-        /* height: 700px; */
-    }
-
-    .gallery-title{
-        font-size: 25px;
-        letter-spacing: 2px;
-        max-width: 1350px;
-    }
-    
-    .dropdown{
-        font-size: 20px;
-        max-width: 1350px;
-    }
-
-    .gallery-filters{
-        max-width: 1350px;
-    }
-    
-    .gallery-filters a{
-        font-size: 17px;
-    }
-
-    .gallery{
-        max-width: 1350px;
-        height: auto;
-    }
-
-    .column{
-        width: 40%;
-        height: 1520px
-    }
-    
-    .photo{
-        width: 100%;
-        height: auto;
-        padding-bottom: 5px;
-    }
-
-    .image-filter{
-        height: 290vh;
-    }
-
-    .About{
-        max-width: 1350px;
-    }
-    
-    .About img{
-        border-radius: 5px;
-        width: 100%;
-        height: 580px;
-        margin-left: 30px;
-        margin-top: 10px;
-    }
-
-    .info{
-        font-family: 'Poppins', sans-serif;
-        padding: 80px;
-        margin-bottom: 60px;
-    }
-    
-    .info h2{
-        text-transform: uppercase;
-        color: rgb(54, 54, 54);
-        position: relative;
-        bottom: 80px;
-        left: 2px;
-        font-weight: 100px;
-    }
-    
-    .info p{
-        font-size: 17px;
-    }
-    
-    .first-quote{
-        font-size: 1.45rem;
-        position: relative;
-        top: 117.5px;
-        right: 170px;
-    }
-    
-    .second-quote{
-        font-size: 1.45rem;
-        position: relative;
-        top: 155px;
-        right: 25px;
-        /* width: 400px; */
-    }
-    
-    .form-section {
-        max-width: 1350px;
-        height: 700px;
-        padding: 13px;
-    }
-    
-    form h3{
-        font-size: 27px;
-        /* padding-bottom: 18px; */
-        margin-right: 0px;
-    }
-    
-    textarea{
-        padding: 10px;
-        margin-bottom: 2px;
-        width: 200px;
-    }
-    
-    .form input{
-        padding: 12px;
-        margin-bottom: 4px;
-        width: 200px;
-    }
-    
-    .form button{
-        /* width: 200px; */
-        padding: 8px;
-        margin-top: 2px;
-    }
-    
-    .form{
-        /* margin-bottom: 30px; */
-        width: 500px;
-        height: 475px;
-    }
-
-    .footer-section{
-        height: 78px;
-        max-width: 1350px;
-        font-size: 20px;
-    }
-}
-
-@media only screen and (max-width: 1280px){
-
-    .logo{
-        padding: 10px;
-        margin-left: 15px;
-    }
-    
-    .top-nav{
-        height: 85px;
-        max-width: 1280px;
-        top: 0;
-    }
-
-    .top-nav-links a{
-        font-size: 14px;
-    }
-
-    .top-nav-links{
-        max-width: 1280px;
-        margin-right: 100px;
-    }
-
-    #Items{
-        /* display: none; */
-        position: absolute;
-        top: 64px;
-        /* display: flex; */
-        width: 1280px;
-        height: 150px;
-        /* background-color: rgb(51, 50, 50); */
-        background-color: linear-gradient(to bottom, black 0%, transparent 100%);
-    }
-
-    .image-background{
-        max-width: 1280px;
-        /* height: 700px; */
-    }
-
-    .gallery-title{
-        font-size: 25px;
-        letter-spacing: 2px;
-        max-width: 1280px;
-    }
-    
-    .dropdown{
-        font-size: 20px;
-        max-width: 1280px;
-    }
-
-    .gallery-filters{
-        max-width: 1280px;
-    }
-    
-    .gallery-filters a{
-        font-size: 17px;
-    }
-
-    .gallery{
-        max-width: 1280px;
-        height: auto;
-    }
-
-    .column{
-        width: 100%;
-        height: 1520px
-    }
-    
-    .photo{
-        width: 100%;
-        height: auto;
-        padding-bottom: 5px;
-    }
-
-    .image-filter{
-        height: 285vh;
-    }
-
-    .About{
-        max-width: 1280px;
-    }
-    
-    .About img{
-        border-radius: 5px;
-        width: 100%;
-        height: 580px;
-        margin-left: 30px;
-        margin-top: 10px;
-    }
-
-    .info{
-        font-family: 'Poppins', sans-serif;
-        padding: 80px;
-        margin-bottom: 60px;
-    }
-    
-    .info h2{
-        text-transform: uppercase;
-        color: rgb(54, 54, 54);
-        position: relative;
-        bottom: 80px;
-        left: 2px;
-        font-weight: 100px;
-    }
-    
-    .info p{
-        font-size: 17px;
-    }
-    
-    .first-quote{
-        font-size: 1.45rem;
-        position: relative;
-        top: 117.5px;
-        right: 170px;
-    }
-    
-    .second-quote{
-        font-size: 1.45rem;
-        position: relative;
-        top: 155px;
-        right: 25px;
-        /* width: 400px; */
-    }
-    
-    .form-section {
-        max-width: 1280px;
-        height: 700px;
-        padding: 13px;
-    }
-    
-    form h3{
-        font-size: 27px;
-        /* padding-bottom: 18px; */
-        margin-right: 0px;
-    }
-    
-    textarea{
-        padding: 10px;
-        margin-bottom: 2px;
-        width: 200px;
-    }
-    
-    .form input{
-        padding: 12px;
-        margin-bottom: 4px;
-        width: 200px;
-    }
-    
-    .form button{
-        /* width: 200px; */
-        padding: 8px;
-        margin-top: 2px;
-    }
-    
-    .form{
-        /* margin-bottom: 30px; */
-        width: 500px;
-        height: 475px;
-    }
-
-    .footer-section{
-        height: 78px;
-        max-width: 1280px;
-        font-size: 20px;
-    }
-}
-
-@media only screen and (max-width: 1180px){
-    .top-nav-links{
-        max-width: 1180px;
-        margin-right: 50px;
-    }
-
-    .image-background{
-        max-width: 1180px;
-        /* height: 700px; */
-    }
-
-    .image-filter{
-        height: 280vh;
-    }
-
-    #Items{
-        /* display: none; */
-        position: absolute;
-        top: 64px;
-        /* display: flex; */
-        width: 1180px;
-        height: 150px;
-        /* background-color: rgb(51, 50, 50); */
-        background-color: linear-gradient(to bottom, black 0%, transparent 100%);
-    }
-}
-
-@media only screen and (max-width: 1131px){
-
-    .first-quote{
-        font-size: 1.35rem;
-        position: relative;
-        top: 117.5px;
-        right: 170px;
-    }
-    
-    .second-quote{
-        font-size: 1.35rem;
-        position: relative;
-        top: 155px;
-        right: 25px;
-        /* width: 400px; */
-    }
-
-    .image-filter{
-        height: 270vh;
-    }
-
-    #Items{
-        /* display: none; */
-        position: absolute;
-        top: 64px;
-        /* display: flex; */
-        width: 1131px;
-        height: 150px;
-        /* background-color: rgb(51, 50, 50); */
-        background-color: linear-gradient(to bottom, black 0%, transparent 100%);
-    }
-
-}
-
-@media only screen and (max-width: 1097px){
-    .first-quote{
-        font-size: 1.15rem;
-        position: relative;
-        top: 117.5px;
-        right: 140px;
-    }
-    
-    .second-quote{
-        font-size: 1.15rem;
-        position: relative;
-        top: 155px;
-        right: 20px;
-        /* width: 400px; */
-    }
-
-    .image-filter{
-        height: 270vh;
-    }
-
-    #Items{
-        /* display: none; */
-        position: absolute;
-        top: 64px;
-        /* display: flex; */
-        width: 1097px;
-        height: 150px;
-        /* background-color: rgb(51, 50, 50); */
-        background-color: linear-gradient(to bottom, black 0%, transparent 100%);
-    }
-}
-
-@media only screen and (max-width: 1080px){
-    .top-nav-links{
-        max-width: 1080px;
-        margin-right: 10px;
-    }
-
-    .image-filter{
-        height: 260vh;
-    }
-
-    #Items{
-        /* display: none; */
-        position: absolute;
-        top: 64px;
-        /* display: flex; */
-        width: 1080px;
-        height: 150px;
-        /* background-color: rgb(51, 50, 50); */
-        background-color: linear-gradient(to bottom, black 0%, transparent 100%);
-    }
-
-    .image-background{
-        max-width: 1080px;
-        background-size: cover;
-    }
-}
-
-@media only screen and (max-width: 1024px) {
-
-    .logo{
-        padding: 10px;
-        margin-left: 15px;
-    }
-    
-    .top-nav{
-        height: 85px;
-        max-width: 1024px;
-        top: 0;
-    }
-
-    .top-nav-links a{
-        font-size: 12px;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        padding-left: 25px;
-        padding-right: 25px;
-    }
-
-    .top-nav-links{
-        max-width: 1024px;
-        margin-right: 50px;
-    }
-
-    .image-background{
-        max-width: 1024px;
-    }
-
-    .gallery-title{
-        font-size: 25px;
-        letter-spacing: 2px;
-        max-width: 1024px;
-    }
-    
-    .dropdown{
-        font-size: 20px;
-        max-width: 1024px;
-    }
-
-    .gallery-filters{
-        max-width: 1024px;
-    }
-    
-    .gallery-filters a{
-        font-size: 17px;
-    }
-
-    .gallery{
-        max-width: 1024px;
-        height: auto;
-    }
-
-    .image-filter{
-        height: 235vh;
-    }
-    
-    .column{
-        padding: 45px 2.5px 0px 2.5px;
-        width: 33%;
-        height: 1520px
-    }
-
-    .About{
-        max-width: 1024px;
-    }
-    
-    .About img{
-        border-radius: 5px;
-        width: 100%;
-        height: auto;
-        margin-left: 30px;
-        margin-top: 10px;
-    }
-
-    .info{
-        font-family: 'Poppins', sans-serif;
-        padding: 80px;
-        margin-bottom: 60px;
-    }
-    
-    .info h2{
-        text-transform: uppercase;
-        color: rgb(54, 54, 54);
-        position: relative;
-        bottom: 80px;
-        left: 2px;
-        font-weight: 100px;
-    }
-    
-    .info p{
-        font-size: 15.5px;
-    }
-    
-    .first-quote{
-        font-size: 1.15rem;
-        position: relative;
-        top: 117.5px;
-        right: 130px;
-    }
-    
-    .second-quote{
-        font-size: 1.15rem;
-        position: relative;
-        top: 155px;
-        right: 15px;
-        /* width: 400px; */
-    }
-    
-    .form-section {
-        max-width: 1024px;
-        height: 700px;
-        padding: 13px;
-    }
-    
-    form h3{
-        font-size: 24px;
-        /* padding-bottom: 18px; */
-        margin-right: 0px;
-    }
-    
-    textarea{
-        padding: 10px;
-        margin-bottom: 2px;
-        width: 200px;
-    }
-    
-    .form input{
-        padding: 12px;
-        margin-bottom: 4px;
-        width: 200px;
-    }
-    
-    .form button{
-        /* width: 200px; */
-        padding: 8px;
-        margin-top: 2px;
-    }
-    
-    .form{
-        /* margin-bottom: 30px; */
-        width: 500px;
-        height: 475px;
-    }
-
-    .footer-section{
-        height: 78px;
-        max-width: 1024px;
-        font-size: 20px;
-    }
-    
-    .paragraph{
-        font-size: 17px;
-    }
-      
-    .paragraph-2 {
-        font-size: 17px;
-    }
-    
-    .hamburger-menu{
-        display: none;
-        margin-right: 50px;
-        cursor: pointer;
-    }
-
-    #Items{
-        display: none;
-        position: absolute;
-        top: 84px;
-        /* display: flex; */
-        width: 1024px;
-        height: 150px;
-        /* background-color: rgb(51, 50, 50); */
-        background-color: linear-gradient(to bottom, black 0%, transparent 100%);
-    }
-
-    #Items a{
-        font-size: 22px;
-        text-decoration: none;
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        max-width: 1024px;
-        align-items: center;
-        padding: 5px;
-        border: 1px solid transparent; 
-        color: #eeeeee;
-        /* text-transform: uppercase; */
-        /* font-family: 'Poppins', sans-serif; */
-    }
-
-    #Items a:hover{
-        /* border-color: rgb(233, 233, 233); */
-        color: rgb(239, 143, 10);
-    }
-
-    .hamburger-menu .line{
-        display: block;
-        background-color: #fafafa;
-        height: 3px;
-        width: 25px;
-        margin: 5px;
-    }
-
-}
-
-@media only screen and (max-width: 980px) {
-
-    .logo{
-        padding: 10px;
-        margin-left: 15px;
-    }
-    
-    .top-nav{
-        height: 85px;
-        max-width: 980px;
-        top: 0;
-    }
-
-    .top-nav-links a{
-        font-size: 12px;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        padding-left: 25px;
-        padding-right: 25px;
-    }
-
-    .top-nav-links{
-        max-width: 980px;
-        margin-right: 185px;
-    }
-
-    .image-background{
-        max-width: 980px;
-    }
-
-    .gallery-title{
-        font-size: 25px;
-        letter-spacing: 2px;
-        max-width: 980px;
-    }
-    
-    .dropdown{
-        font-size: 20px;
-        max-width: 980px;
-    }
-
-    .gallery-filters{
-        max-width: 980px;
-    }
-    
-    .gallery-filters a{
-        font-size: 17px;
-    }
-
-    .gallery{
-        max-width: 980px;
-        height: auto;
-    }
-
-    .image-filter{
-        height: 230vh;
-    }
-    
-    .column{
-        padding: 45px 2.5px 0px 2.5px;
-        width: 33%;
-        height: 1520px
-    }
-
-    .About{
-        max-width: 980px;
-    }
-    
-    .About img{
-        border-radius: 5px;
-        width: 100%;
-        height: auto;
-        margin-left: 30px;
-        margin-top: 10px;
-    }
-
-    .info{
-        font-family: 'Poppins', sans-serif;
-        padding: 80px;
-        margin-bottom: 60px;
-    }
-    
-    .info h2{
-        text-transform: uppercase;
-        color: rgb(54, 54, 54);
-        position: relative;
-        bottom: 80px;
-        left: 2px;
-        font-weight: 100px;
-    }
-    
-    .info p{
-        font-size: 15.5px;
-    }
-    
-    .first-quote{
-        font-size: 1.14rem;
-        position: relative;
-        top: 117.5px;
-        right: 130px;
-    }
-    
-    .second-quote{
-        font-size: 1.14rem;
-        position: relative;
-        top: 155px;
-        right: 15px;
-        /* width: 400px; */
-    }
-    
-    .form-section {
-        max-width: 980px;
-        height: 700px;
-        padding: 13px;
-    }
-    
-    form h3{
-        font-size: 24px;
-        /* padding-bottom: 18px; */
-        margin-right: 0px;
-    }
-    
-    textarea{
-        padding: 10px;
-        margin-bottom: 2px;
-        width: 200px;
-    }
-    
-    .form input{
-        padding: 12px;
-        margin-bottom: 4px;
-        width: 200px;
-    }
-    
-    .form button{
-        /* width: 200px; */
-        padding: 8px;
-        margin-top: 2px;
-    }
-    
-    .form{
-        /* margin-bottom: 30px; */
-        width: 500px;
-        height: 475px;
-    }
-
-    .footer-section{
-        height: 78px;
-        max-width: 980px;
-        font-size: 20px;
-    }
-    
-    .paragraph{
-        font-size: 17px;
-    }
-      
-    .paragraph-2 {
-        font-size: 17px;
-    }
-
-    .top-nav-links a{
-        display: none;
-    }
-    
-    .hamburger-menu{
-        display: block;
-        margin-right: 50px;
-        cursor: pointer;
-    }
-
-    #Items{
-        /* display: none; */
-        position: absolute;
-        top: 84px;
-        /* display: flex; */
-        width: 980px;
-        height: 150px;
-        /* background-color: rgb(51, 50, 50); */
-        background-color: linear-gradient(to bottom, black 0%, transparent 100%);
-    }
-
-    #Items a{
-        font-size: 21px;
-        text-decoration: none;
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        max-width: 980px;
-        align-items: center;
-        padding: 5px;
-        border: 1px solid transparent; 
-        color: #eeeeee;
-        /* text-transform: uppercase; */
-        /* font-family: 'Poppins', sans-serif; */
-    }
-
-    #Items a:hover{
-        /* border-color: rgb(233, 233, 233); */
-        color: rgb(239, 143, 10);
-    }
-
-    .hamburger-menu .line{
-        display: block;
-        background-color: #fafafa;
-        height: 3px;
-        width: 25px;
-        margin: 5px;
-    }
-    
-  .hamburger-menu.active .line:nth-child(1) {
-    transition: 0.2s ease all;
-    transform: translateY(8px) rotate(45deg);
-  }
-  
-  .hamburger-menu.active .line:nth-child(2) {
-    opacity: 0;
-  }
-  
-  .hamburger-menu.active .line:nth-child(3) {
-    transition: 0.2s ease all;
-    transform: translateY(-8px) rotate(-45deg);
-  }
-
-}
-
-@media only screen and (max-width: 950px) {
-    .first-quote{
-        font-size: 1.14rem;
-        position: relative;
-        top: 80px;
-        right: 130px;
-    }
-    
-    .second-quote{
-        font-size: 1.14rem;
-        position: relative;
-        top: 95px;
-        right: 15px;
-        /* width: 400px; */
-    }
-    
-    .image-filter{
-        height: 220vh;
-    }
-
-    #Items{
-        /* display: none; */
-        position: absolute;
-        top: 64px;
-        /* display: flex; */
-        width: 950px;
-        height: 150px;
-        /* background-color: rgb(51, 50, 50); */
-        background-color: linear-gradient(to bottom, black 0%, transparent 100%);
-    }
-}
-
-@media only screen and (max-width: 913px) {
-
-    .About img{
-        border-radius: 5px;
-        width: 100%;
-        height: auto;
-        margin-left: 30px;
-        margin-top: 10px;
-    }
-    
-    .info h2{
-        text-transform: uppercase;
-        color: rgb(54, 54, 54);
-        position: relative;
-        bottom: 110px;
-        left: 2px;
-        font-weight: 100px;
-        font-size: 22px;
-    }
-
-    .image-filter{
-        height: 220vh;
-    }
-    
-    .info p{
-        font-size: 14px;
-    }
-    
-    .first-quote{
-        font-size: 1.10rem;
-        position: relative;
-        top: 5px;
-        right: 125px;
-    }
-    
-    .second-quote{
-        font-size: 1.10rem;
-        position: relative;
-        top: 5px;
-        right: 15px;
-        /* width: 400px; */
-    }
-
-    #Items{
-        /* display: none; */
-        position: absolute;
-        top: 64px;
-        /* display: flex; */
-        width: 913px;
-        height: 150px;
-        /* background-color: rgb(51, 50, 50); */
-        background-color: linear-gradient(to bottom, black 0%, transparent 100%);
-    }
-
-    .bi-facebook{
-        width: 28px;
-        height: 28px;
-    }
-
-    .bi-instagram{
-        width: 28px;
-        height: 28px;
-    }
-
-}
-
-/* @keyframes animate {
-    from {
-      pointer-events: none;
-      opacity: 0;
-    }
-    to {
-        pointer-events: all;
-        opacity: 1;
-    }
-  } */
-
-@media only screen and (max-width: 851px) {
-    
-    .logo{
-        padding: 10px;
-        margin-left: 15px;
-    }
-
-    .logo img{
-        height: 65px;
-    }
-    
-    .top-nav{
-        height: 65px;
-        max-width: 850px;
-        top: 0;
-    }
-
-    .top-nav-links a{
-        font-size: 12px;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        padding-left: 25px;
-        padding-right: 25px;
-    }
-
-    .top-nav-links{
-        max-width: 850px;
-        margin-right: 185px;
-    }
-
-    .image-background{
-        max-width: 850px;
-        background-size: cover;
-    }
-
-    .gallery-title{
-        font-size: 25px;
-        letter-spacing: 2px;
-        max-width: 850px;
-    }
-    
-    .dropdown{
-        font-size: 20px;
-        max-width: 850px;
-    }
-
-    .gallery-filters{
-        max-width: 850px;
-    }
-    
-    .gallery-filters a{
-        font-size: 17px;
-    }
-
-    .gallery{
-        max-width: 850px;
-        height: auto;
-    }
-
-    .image-filter{
-        height: 210vh;
-    }
-    
-    .column{
-        padding: 45px 2.5px 0px 2.5px;
-        width: 33%;
-        height: 1520px
-    }
-
-    .About{
-        max-width: 850px;
-    }
-    
-    .About img{
-        border-radius: 5px;
-        width: 100%;
-        height: auto;
-        margin-left: 30px;
-        margin-top: 10px;
-    }
-
-    .info{
-        font-family: 'Poppins', sans-serif;
-        padding: 80px;
-        margin-bottom: 60px;
-    }
-    
-    .info h2{
-        text-transform: uppercase;
-        color: rgb(54, 54, 54);
-        position: relative;
-        bottom: 115px;
-        left: 2px;
-        font-weight: 100px;
-        font-size: 22px;
-    }
-    
-    .info p{
-        font-size: 14px;
-    }
-    
-    .first-quote{
-        font-size: 1.10rem;
-        position: relative;
-        top: 0px;
-        right: 130px;
-    }
-    
-    .second-quote{
-        font-size: 1.10rem;
-        position: relative;
-        top: 0px;
-        right: 15px;
-        /* width: 400px; */
-    }
-    
-    .form-section {
-        max-width: 850px;
-        height: 700px;
-        padding: 13px;
-    }
-    
-    form h3{
-        font-size: 24px;
-        /* padding-bottom: 18px; */
-        margin-right: 0px;
-    }
-    
-    textarea{
-        padding: 10px;
-        margin-bottom: 2px;
-        width: 200px;
-    }
-    
-    .form input{
-        padding: 12px;
-        margin-bottom: 4px;
-        width: 200px;
-    }
-    
-    .form button{
-        /* width: 200px; */
-        padding: 8px;
-        margin-top: 2px;
-    }
-    
-    .form{
-        /* margin-bottom: 30px; */
-        width: 500px;
-        height: 475px;
-    }
-
-    .footer-section{
-        height: 78px;
-        max-width: 850px;
-        font-size: 20px;
-    }
-    
-    /* .footer-section .paragraph{
-      top: 584%;
-    }
-    
-    .footer-section .paragraph-2 {
-      top: 588%;
-    } */
-
-    .top-nav-links a{
-        display: none;
-    }
-    
-    .hamburger-menu{
-        display: block;
-        margin-right: 50px;
-        cursor: pointer;
-    }
-
-    #Items{
-        /* display: none; */
-        position: absolute;
-        top: 64px;
-        /* display: flex; */
-        width: 850px;
-        height: 150px;
-        /* background-color: rgb(51, 50, 50); */
-        background-color: linear-gradient(to bottom, black 0%, transparent 100%);
-    }
-
-    #Items a{
-        font-size: 21px;
-        text-decoration: none;
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        max-width: 850px;
-        align-items: center;
-        padding: 5px;
-        border: 1px solid transparent; 
-        color: #eeeeee;
-        /* text-transform: uppercase; */
-        /* font-family: 'Poppins', sans-serif; */
-    }
-
-    #Items a:hover{
-        /* border-color: rgb(233, 233, 233); */
-        color: rgb(239, 143, 10);
-    }
-
-    .hamburger-menu .line{
-        display: block;
-        background-color: #fafafa;
-        height: 3px;
-        width: 25px;
-        margin: 5px;
-    }
-
-    .bi-facebook{
-        width: 28px;
-        height: 28px;
-    }
-
-    .bi-instagram{
-        width: 28px;
-        height: 28px;
-    }
-    
-  .hamburger-menu.active .line:nth-child(1) {
-    transition: 0.2s ease all;
-    transform: translateY(8px) rotate(45deg);
-  }
-  
-  .hamburger-menu.active .line:nth-child(2) {
-    opacity: 0;
-  }
-  
-  .hamburger-menu.active .line:nth-child(3) {
-    transition: 0.2s ease all;
-    transform: translateY(-8px) rotate(-45deg);
-  }
-
-}
-
-@media only screen and (max-width: 831px) {
-
-    .info p{
-        font-size: 13px;
-    }
-
-    .first-quote{
-        font-size: 1.10rem;
-        position: relative;
-        top: -60px;
-        right: 130px;
-    }
-    
-    .second-quote{
-        font-size: 1.10rem;
-        position: relative;
-        top: -60px;
-        right: 15px;
-        /* width: 400px; */
-    }
-
-    #Items{
-        /* display: none; */
-        position: absolute;
-        top: 64px;
-        /* display: flex; */
-        width: 831px;
-        height: 150px;
-        /* background-color: rgb(51, 50, 50); */
-        background-color: linear-gradient(to bottom, black 0%, transparent 100%);
-    }
-
-    .image-filter{
-        height: 200vh;
-    }
-
-    .gallery-title{
-        max-width: 831px;
-    }
-    
-    .dropdown{
-        max-width: 831px;
-    }
-
-    .gallery-filters{
-        max-width: 831px;
-    }
-
-    .gallery{
-        max-width: 831px;
-        height: auto;
-    }
-
-    .bi-facebook{
-        width: 26px;
-        height: 26px;
-    }
-
-    .bi-instagram{
-        width: 26px;
-        height: 26px;
-    }
-    
-}
-
-@media only screen and (max-width: 805px) {
-
-    .About{
-        flex-direction: column-reverse;
-    }
-
-    .info{
-        height: 180px;
-    }
-
-    .info h2{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        /* flex-direction: column; */
-        text-transform: uppercase;
-        color: rgb(54, 54, 54);
-        position: relative;
-        bottom: 105px;
-        left: 2px;
-        font-weight: 100px;
-        font-size: 20px;
-    }
-
-    .info p{
-        display: flex;
-        align-items: center;
-        text-align: center;
-        justify-content: center;
-        font-size: 13px;
-        width: auto;
-    }
-
-    .gallery{
-        max-width: 805px;
-        height: auto;
-    }
-
-    .gallery-title{
-        max-width: 805px;
-    }
-    
-    .dropdown{
-        max-width: 805px;
-    }
-
-    .gallery-filters{
-        max-width: 805px;
-    }
-
-    .first-quote{
-        font-size: 0.90rem;
-        position: relative;
-        top: -100px;
-        right: 180px;
-        display: none;
-    }
-    
-    .second-quote{
-        font-size: 0.90rem;
-        position: relative;
-        top: -90px;
-        right: 130px;
-        /* display: none; */
-        /* width: 400px; */
-    }
-
-    .image{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .About img{
-        height: 95%;
-        width: 75%;
-        padding: 0;
-        margin: 0;
-        /* display: none; */
-    }
-
-    #Items{
-        /* display: none; */
-        position: absolute;
-        top: 64px;
-        /* display: flex; */
-        width: 805px;
-        height: 150px;
-        /* background-color: rgb(51, 50, 50); */
-        background-color: linear-gradient(to bottom, black 0%, transparent 100%);
-    }
-
-    .image-filter{
-        height: 190vh;
-    }
-
-    .bi-instagram{
-        width: 26px;
-        height: 26px;
-    }
-
-}
-
-@media only screen and (max-width: 768px) {
-
-    .About{
-        flex-direction: column-reverse;
-    }
-
-    .info{
-        height: 180px;
-    }
-
-    .info h2{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        /* flex-direction: column; */
-        text-transform: uppercase;
-        color: rgb(54, 54, 54);
-        position: relative;
-        bottom: 105px;
-        left: 2px;
-        font-weight: 100px;
-        font-size: 20px;
-    }
-
-    .info p{
-        display: flex;
-        align-items: center;
-        text-align: center;
-        justify-content: center;
-        font-size: 13px;
-        width: auto;
-    }
-
-    .gallery{
-        max-width: 768px;
-        height: auto;
-    }
-
-    .gallery-title{
-        max-width: 768px;
-    }
-    
-    .dropdown{
-        max-width: 768px;
-    }
-
-    .gallery-filters{
-        max-width: 768px;
-    }
-
-    .first-quote{
-        font-size: 0.90rem;
-        position: relative;
-        top: -100px;
-        right: 180px;
-        display: none;
-    }
-    
-    .second-quote{
-        font-size: 0.90rem;
-        position: relative;
-        top: -90px;
-        right: 110px;
-        /* display: none; */
-        /* width: 400px; */
-    }
-
-    .image{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .About img{
-        height: 95%;
-        width: 75%;
-        padding: 0;
-        margin: 0;
-        /* display: none; */
-    }
-
-    #Items{
-        /* display: none; */
-        position: absolute;
-        top: 64px;
-        /* display: flex; */
-        width: 768px;
-        height: 150px;
-        /* background-color: rgb(51, 50, 50); */
-        background-color: linear-gradient(to bottom, black 0%, transparent 100%);
-    }
-
-    .image-filter{
-        height: 190vh;
-    }
-    
-    .bi-instagram{
-        width: 26px;
-        height: 26px;
-    }
-
-}
-
-@media only screen and (max-width: 750px) {
-
-    .second-quote{
-        font-size: 0.90rem;
-        position: relative;
-        top: -90px;
-        right: 100px;
-        /* display: none; */
-        /* width: 400px; */
-    }
-
-    .paragraph{
-        font-size: 15px;
-    }
-
-    .paragraph-2{
-        font-size: 15px;
-    }
-
-    .About img{
-        height: 95%;
-        width: 75%;
-        padding: 0;
-        margin: 0;
-        /* display: none; */
-    }
-
-    #Items{
-        /* display: none; */
-        position: absolute;
-        top: 64px;
-        /* display: flex; */
-        width: 750px;
-        height: 150px;
-        /* background-color: rgb(51, 50, 50); */
-        background-color: linear-gradient(to bottom, black 0%, transparent 100%);
-    }
-
-    .gallery{
-        max-width: 750px;
-        height: auto;
-    }
-
-    .gallery-title{
-        max-width: 750px;
-    }
-    
-    .dropdown{
-        max-width: 750px;
-    }
-
-    .gallery-filters{
-        max-width: 750px;
-    }
-
-    .gallery-filters a{
-        font-size: 16px;
-    }
-
-    .image-filter{
-        height: 180vh;
-    }
-
-    .form{
-        width: 400px;
-        height: 425px;
-    }
-
-    .form input{
-        width: 150px;
-        font-size: 12px;
-    }
-
-    textarea{
-        width: 150px;
-        font-size: 12px;
-    }
-
-    #myForm h3{
-        font-size: 22px;
-    }
-
-    #submit{
-        height: 35px;
-        width: 75px;
-    }
-
-    .footer-section{
-        height: 8vh;
-    }
-    
-    .bi-instagram{
-        width: 26px;
-        height: 26px;
-    }
-}
-
-@media only screen and (max-width: 700px) {
-
-    #Items{
-        /* display: none; */
-        position: absolute;
-        top: 64px;
-        /* display: flex; */
-        width: 700px;
-        height: 150px;
-        /* background-color: rgb(51, 50, 50); */
-        background-color: linear-gradient(to bottom, black 0%, transparent 100%);
-    }
-
-    .second-quote{
-        font-size: 0.90rem;
-        position: relative;
-        top: -90px;
-        right: 75px;
-        /* display: none; */
-        /* width: 400px; */
-    }
-
-    .gallery{
-        max-width: 700px;
-        height: auto;
-    }
-
-    .image-filter{
-        height: 170vh;
-    }
-
-    .gallery-title{
-        max-width: 700px;
-    }
-    
-    .dropdown{
-        max-width: 700px;
-    }
-
-    .gallery-filters{
-        max-width: 700px;
-    }
-
-    .gallery-filters a{
-        font-size: 16px;
-    }
-
-    .paragraph{
-        font-size: 15px;
-    }
-
-    .paragraph-2{
-        font-size: 15px;
-    }
-
-    .About img{
-        height: 95%;
-        width: 75%;
-        padding: 0;
-        margin: 0;
-        /* display: none; */
-    }
-
-    .form{
-        width: 400px;
-        height: 425px;
-    }
-
-    .form input{
-        width: 150px;
-        font-size: 12px;
-    }
-
-    textarea{
-        width: 150px;
-        font-size: 12px;
-    }
-
-    #myForm h3{
-        font-size: 22px;
-    }
-
-    #submit{
-        height: 35px;
-        width: 75px;
-    }
-    
-    .bi-instagram{
-        width: 26px;
-        height: 26px;
-    }
-}
-
-@media only screen and (max-width: 650px) {
-
-    #Items{
-        /* display: none; */
-        position: absolute;
-        top: 64px;
-        /* display: flex; */
-        width: 650px;
-        height: 150px;
-        /* background-color: rgb(51, 50, 50); */
-        background-color: linear-gradient(to bottom, black 0%, transparent 100%);
-    }
-
-    .second-quote{
-        font-size: 0.90rem;
-        position: relative;
-        top: -90px;
-        right: 55px;
-        /* display: none; */
-        /* width: 400px; */
-    }
-
-    .image-filter{
-        height: 160vh;
-    }
-
-    .gallery{
-        max-width: 650px;
-        height: auto;
-    }
-
-    .gallery-title{
-        max-width: 650px;
-    }
-    
-    .dropdown{
-        max-width: 650px;
-    }
-
-    .gallery-filters{
-        max-width: 650px;
-    }
-
-    .gallery-filters a{
-        font-size: 15px;
-    }
-
-    .paragraph{
-        font-size: 15px;
-    }
-
-    .paragraph-2{
-        font-size: 15px;
-    }
-
-    .About img{
-        height: 95%;
-        width: 75%;
-        padding: 0;
-        margin: 0;
-        /* display: none; */
-    }
-    
-    .bi-instagram{
-        width: 24px;
-        height: 24px;
-    }
-}
-
-@media only screen and (max-width: 600px) {
-
-    #Items{
-        /* display: none; */
-        position: absolute;
-        top: 64px;
-        /* display: flex; */
-        width: 600px;
-        height: 150px;
-        /* background-color: rgb(51, 50, 50); */
-        background-color: linear-gradient(to bottom, black 0%, transparent 100%);
-    }
-
-    .second-quote{
-        font-size: 0.90rem;
-        position: relative;
-        top: -90px;
-        right: 30px;
-        /* display: none; */
-        /* width: 400px; */
-    }
-
-    .image-filter{
-        height: 150vh;
-    }
-
-    .gallery{
-        max-width: 600px;
-        height: auto;
-    }
-
-    .gallery-title{
-        max-width: 600px;
-    }
-    
-    .dropdown{
-        max-width: 600px;
-    }
-
-    .gallery-filters{
-        max-width: 600px;
-    }
-
-    .gallery-filters a{
-        font-size: 14px;
-    }
-
-    .paragraph{
-        font-size: 13px;
-    }
-
-    .paragraph-2{
-        font-size: 13px;
-    }
-
-    .About img{
-        height: 95%;
-        width: 75%;
-        padding: 0;
-        margin: 0;
-        /* display: none; */
-    }
-
-    .form{
-        width: 350px;
-        height: 420px;
-    }
-
-    #submit{
-        width: 70px;
-        height: 35px;
-        font-size: 12px;
-    }
-    
-    .bi-instagram{
-        width: 24px;
-        height: 24px;
-    }
-}
-
-@media only screen and (max-width: 550px) {
-
-    #Items{
-        /* display: none; */
-        position: absolute;
-        top: 64px;
-        /* display: flex; */
-        width: 550px;
-        height: 150px;
-        /* background-color: rgb(51, 50, 50); */
-        background-color: linear-gradient(to bottom, black 0%, transparent 100%);
-    }
-
-    .second-quote{
-        font-size: 0.90rem;
-        position: relative;
-        top: -90px;
-        right: 5px;
-        /* display: none; */
-        /* width: 400px; */
-    }
-
-    .image-filter{
-        height: 142vh;
-    }
-
-    .gallery{
-        max-width: 550px;
-        height: auto;
-    }
-
-    .gallery-title{
-        max-width: 550px;
-    }
-    
-    .dropdown{
-        max-width: 550px;
-    }
-
-    .gallery-filters{
-        max-width: 550px;
-    }
-
-    .gallery-filters a{
-        font-size: 14px;
-    }
-
-    .paragraph{
-        font-size: 12px;
-    }
-
-    .paragraph-2{
-        font-size: 12px;
-    }
-
-    .About img{
-        height: 95%;
-        width: 60%;
-        padding: 0;
-        margin: 0;
-        /* display: none; */
-    }
-    
-    .bi-instagram{
-        width: 24px;
-        height: 24px;
-    }
-
-    .hamburger-menu .line{
-        background-color: #fafafa;
-        height: 1.5px;
-        width: 25px;
-        margin: 6px;
-}
-}
-
-@media only screen and (max-width: 500px) {
-
-    .logo img{
-        height: 55px;
-    }
-
-    .image-filter{
-        height: 140vh;
-    }
-
-    #Items{
-        /* display: none; */
-        position: absolute;
-        top: 64px;
-        /* display: flex; */
-        width: 500px;
-        height: 150px;
-        /* background-color: rgb(51, 50, 50); */
-        background-color: linear-gradient(to bottom, black 0%, transparent 100%);
-    }
-
-    .second-quote{
-        font-size: 0.88rem;
-        position: relative;
-        top: -90px;
-        right: 2px;
-        /* display: none; */
-        /* width: 400px; */
-    }
-
-    .gallery{
-        max-width: 500px;
-        height: auto;
-    }
-
-    .gallery-title{
-        max-width: 500px;
-    }
-    
-    .dropdown{
-        max-width: 500px;
-    }
-
-    .gallery-filters{
-        max-width: 500px;
-    }
-
-    .gallery-filters a{
-        font-size: 13px;
-    }
-
-    .paragraph{
-        font-size: 11px;
-    }
-
-    .paragraph-2{
-        font-size: 11px;
-    }
-
-    .About img{
-        height: 95%;
-        width: 60%;
-        padding: 0;
-        margin: 0;
-        /* display: none; */
-    }
-    
-    .bi-instagram{
-        width: 24px;
-        height: 24px;
-    }
-}
-
-@media only screen and (max-width: 480px) {
-
-    .logo img{
-        height: 55px;
-    }
-
-    #Items{
-        /* display: none; */
-        position: absolute;
-        top: 64px;
-        /* display: flex; */
-        width: 480px;
-        height: 150px;
-        /* background-color: rgb(51, 50, 50); */
-        background-color: linear-gradient(to bottom, black 0%, transparent 100%);
-    }
-
-    .image-filter{
-        height: 130vh;
-    }
-
-    .gallery{
-        max-width: 480px;
-        height: auto;
-    }
-
-    .info h2{
-        font-size: 18px;
-    }
-
-    .info p{
-        font-size: 12px;
-    }
-
-    .About img{
-        height: 90%;
-        width: 60%;
-        padding: 0;
-        margin: 0;
-        /* display: none; */
-    }
-
-    .second-quote{
-        font-size: 0.80rem;
-        position: relative;
-        top: -90px;
-        right: 2px;
-        /* display: none; */
-        /* width: 400px; */
-    }
-
-    .gallery-title{
-        max-width: 480px;
-    }
-    
-    .dropdown{
-        max-width: 480px;
-    }
-
-    .gallery-filters{
-        max-width: 480px;
-    }
-
-    .gallery-filters a{
-        font-size: 13px;
-    }
-
-    .paragraph{
-        font-size: 9px;
-    }
-
-    .paragraph-2{
-        font-size: 9px;
-    }
-    
-    .bi-instagram{
-        width: 22px;
-        height: 22px;
-    }
-}
-
-@media only screen and (max-width: 450px) {
-
-    .logo img{
-        height: 55px;
-    }
-
-    #Items{
-        /* display: none; */
-        position: absolute;
-        top: 64px;
-        /* display: flex; */
-        width: 450px;
-        height: 150px;
-        /* background-color: rgb(51, 50, 50); */
-        background-color: linear-gradient(to bottom, black 0%, transparent 100%);
-    }
-
-    .image-filter{
-        height: 120vh;
-    }
-
-    .gallery{
-        max-width: 450px;
-        height: auto;
-    }
-
-    .gallery-title{
-        max-width: 450px;
-    }
-    
-    .dropdown{
-        max-width: 450px;
-    }
-
-    .gallery-filters{
-        max-width: 450px;
-    }
-
-    .gallery-filters a{
-        font-size: 13px;
-    }
-
-    .About img{
-        height: 90%;
-        width: 60%;
-        padding: 0;
-        margin: 0;
-        /* display: none; */
-    }
-
-    .info h2{
-        font-size: 16px;
-    }
-
-    .info p{
-        font-size: 10px;
-    }
-
-    .second-quote{
-        font-size: 0.75rem;
-        position: relative;
-        top: -90px;
-        right: 2px;
-        /* display: none; */
-        /* width: 400px; */
-    }
-
-    .paragraph{
-        font-size: 9px;
-    }
-
-    .paragraph-2{
-        font-size: 9px;
-    }
-    
-    .bi-instagram{
-        width: 18px;
-        height: 18px;
-    }
-
-    .form{
-        height: 400px;
-        width: 325px;
-    }
-
-}
-
-    @media only screen and (max-width: 426px) {
-
-        .logo img{
-            height: 55px;
-        }
-
-        .top-nav{
-            max-width: 425px;
-        }
-
-        .image-filter{
-            height: 118vh;
-        }
-
-        #Items{
-            /* display: none; */
-            position: absolute;
-            top: 64px;
-            /* display: flex; */
-            width: 425px;
-            height: 150px;
-            /* background-color: rgb(51, 50, 50); */
-            background-color: linear-gradient(to bottom, black 0%, transparent 100%);
-        }
-
-        .gallery{
-            max-width: 425px;
-            height: auto;
-        }
-
-        .gallery-title{
-            max-width: 425px;
-        }
-        
-        .dropdown{
-            max-width: 425px;
-        }
-    
-        .gallery-filters{
-            max-width: 425px;
-        }
-
-        .gallery-filters a{
-            font-size: 12px;
-        }
-
-        .About img{
-            height: 90%;
-            width: 60%;
-            padding: 0;
-            margin: 0;
-            /* display: none; */
-        }
-
-        .second-quote{
-            font-size: 0.70rem;
-            position: relative;
-            top: -90px;
-            right: 5px;
-            /* display: none; */
-            /* width: 400px; */
-        }
-
-        .paragraph{
-            font-size: 9px;
-        }
-    
-        .paragraph-2{
-            font-size: 9px;
-        }
-        
-        .bi-instagram{
-            width: 16px;
-            height: 16px;
-        }
-    
-}
-
-    @media only screen and (max-width: 413px) { 
-
-        .hamburger-menu {
-            margin-right: 10px;
-        }
-
-        .hamburger-menu .line{
-            margin-left: 0;
-        }
-
-        .logo{
-            margin: 0;
-            padding: 5px;
-        }
-
-        .logo img{
-            height: 55px;
-        }
-
-        .top-nav{
-            max-width: 412px;
-        }
-
-        .gallery-filters a{
-            font-size: 12px;
-        }
-
-        .image-filter{
-            height: 114vh;
-        }
-
-        #Items{
-            /* display: none; */
-            position: absolute;
-            top: 64px;
-            /* display: flex; */
-            width: 412px;
-            height: 150px;
-            /* background-color: rgb(51, 50, 50); */
-            background-color: linear-gradient(to bottom, black 0%, transparent 100%);
-        }
-
-        .info h2{
-            font-size: 10px;
-        }
-    
-        .info p{
-            font-size: 8px;
-        }
-
-        .gallery{
-            max-width: 412px;
-            height: auto;
-        }
-
-        .gallery-title{
-            max-width: 412px;
-        }
-        
-        .dropdown{
-            max-width: 412px;
-        }
-    
-        .gallery-filters{
-            max-width: 412px;
-        }
-
-        .gallery-filters a{
-            font-size: 12px;
-        }
-
-        .About img{
-            height: 80%;
-            width: 60%;
-            padding: 0;
-            margin: 0;
-            /* display: none; */
-        }
-
-        .second-quote{
-            font-size: 0.50rem;
-            position: relative;
-            top: -90px;
-            right: 25px;
-            /* display: none; */
-            /* width: 400px; */
-        }
-
-        .paragraph{
-            font-size: 9px;
-        }
-    
-        .paragraph-2{
-            font-size: 9px;
-        }
-        
-        .bi-instagram{
-            width: 14px;
-            height: 14px;
-        }
-    }
-
-    @media only screen and (max-width: 411px) { 
-
-        .hamburger-menu {
-            margin-right: 100px;
-        }
-
-        .hamburger-menu .line{
-            margin-left: 0;
-        }
-
-        .logo{
-            margin: 0;
-            padding: 5px;
-        }
-
-        .logo img{
-            height: 55px;
-        }
-
-        .top-nav{
-            max-width: 410px;
-        }
-
-        .gallery-filters a{
-            font-size: 12px;
-        }
-
-        .image-filter{
-            height: 114vh;
-        }
-
-        #Items{
-            /* display: none; */
-            position: absolute;
-            top: 64px;
-            /* display: flex; */
-            width: 410px;
-            height: 150px;
-            /* background-color: rgb(51, 50, 50); */
-            background-color: linear-gradient(to bottom, black 0%, transparent 100%);
-        }
-
-        .info h2{
-            font-size: 10px;
-        }
-    
-        .info p{
-            font-size: 8px;
-        }
-
-        .gallery{
-            max-width: 410px;
-            height: auto;
-        }
-
-        .gallery-title{
-            max-width: 410px;
-        }
-        
-        .dropdown{
-            max-width: 410px;
-        }
-    
-        .gallery-filters{
-            max-width: 410px;
-        }
-
-        .About img{
-            height: 80%;
-            width: 60%;
-            padding: 0;
-            margin: 0;
-            /* display: none; */
-        }
-
-        .second-quote{
-            font-size: 0.50rem;
-            position: relative;
-            top: -90px;
-            right: 5px;
-            /* display: none; */
-            /* width: 400px; */
-        }
-
-        .paragraph{
-            font-size: 9px;
-        }
-    
-        .paragraph-2{
-            font-size: 9px;
-        }
-        
-        .bi-instagram{
-            width: 14px;
-            height: 14px;
-        }
-
-    } 
-
-    @media only screen and (max-width: 391px) { 
-
-        .hamburger-menu {
-            margin-right: 100px;
-        }
-
-        .hamburger-menu .line{
-            margin-left: 0;
-        }
-
-        .logo{
-            margin: 0;
-            padding: 5px;
-        }
-
-        .logo img{
-            height: 55px;
-        }
-
-        .top-nav{
-            max-width: 390px;
-        }
-
-        .gallery-filters a{
-            font-size: 12px;
-        }
-
-        .image-filter{
-            height: 114vh;
-        }
-
-        #Items{
-            /* display: none; */
-            position: absolute;
-            top: 64px;
-            /* display: flex; */
-            width: 390px;
-            height: 150px;
-            /* background-color: rgb(51, 50, 50); */
-            background-color: linear-gradient(to bottom, black 0%, transparent 100%);
-        }
-
-        .info h2{
-            font-size: 12px;
-        }
-    
-        .info p{
-            font-size: 8px;
-        }
-
-        .gallery{
-            max-width: 390px;
-            height: auto;
-        }
-
-        .gallery-title{
-            max-width: 390px;
-        }
-        
-        .dropdown{
-            max-width: 390px;
-        }
-    
-        .gallery-filters{
-            max-width: 390px;
-        }
-
-        .gallery-filters a{
-            font-size: 12px;
-        }
-
-        .About img{
-            height: 80%;
-            width: 60%;
-            padding: 0;
-            margin: 0;
-            /* display: none; */
-        }
-
-        .second-quote{
-            font-size: 0.50rem;
-            position: relative;
-            top: -90px;
-            right: 20px;
-            /* display: none; */
-            /* width: 400px; */
-        }
-
-        .paragraph{
-            font-size: 9px;
-        }
-    
-        .paragraph-2{
-            font-size: 9px;
-        }
-        
-        .bi-instagram{
-            width: 14px;
-            height: 14px;
-        }
-    } 
-
-    @media only screen and (max-width: 376px) {
-
-        .hamburger-menu {
-            margin-right: 100px;
-        }
-
-        .hamburger-menu .line{
-            margin-left: 0;
-        }
-
-        .logo{
-            margin: 0;
-            padding: 5px;
-        }
-
-        .logo img{
-            height: 55px;
-        }
-
-        .top-nav{
-            max-width: 375px;
-        }
-
-        .gallery-filters a{
-            font-size: 12px;
-        }
-
-        .image-filter{
-            height: 112vh;
-        }
-
-        #Items{
-            /* display: none; */
-            position: absolute;
-            top: 64px;
-            /* display: flex; */
-            width: 375px;
-            height: 150px;
-            /* background-color: rgb(51, 50, 50); */
-            background-color: linear-gradient(to bottom, black 0%, transparent 100%);
-        }
-
-        .info h2{
-            font-size: 12px;
-        }
-    
-        .info p{
-            font-size: 8px;
-        }
-
-        .gallery{
-            max-width: 375px;
-            height: auto;
-        }
-
-        .gallery-title{
-            max-width: 375px;
-        }
-        
-        .dropdown{
-            max-width: 375px;
-        }
-    
-        .gallery-filters{
-            max-width: 375px;
-        }
-
-        .About img{
-            height: 80%;
-            width: 60%;
-            padding: 0;
-            margin: 0;
-            /* display: none; */
-        }
-
-        .second-quote{
-            font-size: 0.50rem;
-            position: relative;
-            top: -90px;
-            right: 5px;
-            /* display: none; */
-            /* width: 400px; */
-        }
-
-        .paragraph{
-            font-size: 9px;
-        }
-    
-        .paragraph-2{
-            font-size: 9px;
-        }
-        
-        .bi-instagram{
-            width: 14px;
-            height: 14px;
-        }
-}
-
-
-@media only screen and (max-width: 361px) {
-
-    .hamburger-menu {
-        margin-right: 100px;
-    }
-
-    .hamburger-menu .line{
-        margin-left: 0;
-    }
-
-    .logo{
-        margin: 0;
-        padding: 0;
-    }
-
-    .logo img{
-        height: 55px;
-    }
-
-    .top-nav{
-        max-width: 360px;
-    }
-
-    .gallery-filters a{
-        font-size: 12px;
-    }
-
-    .image-filter{
-        height: 112vh;
-    }
-
-    #Items{
-        /* display: none; */
-        position: absolute;
-        top: 64px;
-        /* display: flex; */
-        width: 360px;
-        height: 150px;
-        /* background-color: rgb(51, 50, 50); */
-        background-color: linear-gradient(to bottom, black 0%, transparent 100%);
-    }
-
-    .info h2{
-        font-size: 12px;
-    }
-
-    .info p{
-        font-size: 8px;
-    }
-
-    .gallery{
-        max-width: 360px;
-        height: auto;
-    }
-
-    .gallery-title{
-        max-width: 360px;
-    }
-    
-    .dropdown{
-        max-width: 360px;
-    }
-
-    .gallery-filters{
-        max-width: 360px;
-    }
-
-    .About img{
-        height: 80%;
-        width: 60%;
-        padding: 0;
-        margin: 0;
-        /* display: none; */
-    }
-
-    .second-quote{
-        font-size: 0.50rem;
-        position: relative;
-        top: -90px;
-        right: 5px;
-        /* display: none; */
-        /* width: 400px; */
-    }
-
-    .paragraph{
-        font-size: 7px;
-    }
-
-    .paragraph-2{
-        font-size: 7px;
-    }
-    
-    .bi-instagram{
-        width: 14px;
-        height: 14px;
-    }
-}
-
-@media only screen and (max-width: 341px) { 
-
-    .hamburger-menu {
-        margin-right: 100px;
-    }
-
-    .hamburger-menu .line{
-        margin-left: 0;
-    }
-
-    .logo{
-        margin: 0;
-        padding: 0;
-    }
-
-    .logo img{
-        height: 48px;
-    }
-
-    .top-nav{
-        max-width: 340px;
-    }
-
-    .gallery-filters a{
-        font-size: 12px;
-    }
-
-    .image-filter{
-        height: 110vh;
-    }
-
-    #Items{
-        /* display: none; */
-        position: absolute;
-        top: 64px;
-        /* display: flex; */
-        width: 340px;
-        height: 150px;
-        /* background-color: rgb(51, 50, 50); */
-        background-color: linear-gradient(to bottom, black 0%, transparent 100%);
-    }
-
-    .info h2{
-        font-size: 10px;
-    }
-
-    .info p{
-        font-size: 8px;
-    }
-
-    .gallery{
-        max-width: 340px;
-        height: auto;
-    }
-
-    .gallery-title{
-        max-width: 340px;
-    }
-    
-    .dropdown{
-        max-width: 340px;
-    }
-
-    .gallery-filters{
-        max-width: 340px;
-    }
-
-    .gallery-filters a{
-        font-size: 12px;
-    }
-
-    .image{
-        padding: 0;
-        margin: 0;
-    }
-
-    .About img{
-        height: 80%;
-        width: 60%;  
-        padding: 0;
-        margin: 0;
-        /* display: none; */
-    }
-
-    .second-quote{
-        font-size: 0.40rem;
-        position: relative;
-        top: -90px;
-        right: 5px;
-        /* display: none; */
-        /* width: 400px; */
-    }
-
-    .paragraph{
-        font-size: 7px;
-    }
-
-    .paragraph-2{
-        font-size: 7px;
-    }
-    
-    .bi-instagram{
-        width: 12px;
-        height: 12px;
-    }
- }
-
-    @media only screen and (max-width: 320px) {
-
-        .hamburger-menu {
-            margin-right: 100px;
-        }
-    
-        .hamburger-menu .line{
-            margin-left: 0;
-        }
-    
-        .logo{
-            margin: 0;
-            padding: 0;
-        }
-    
-        .logo img{
-            height: 42px;
-        }
-    
-        .top-nav{
-            max-width: 320px;
-        }
-    
-        .gallery-filters a{
-            font-size: 12px;
-        }
-    
-        .image-filter{
-            height: 108vh;
-        }
-    
-        #Items{
-            /* display: none; */
-            position: absolute;
-            top: 64px;
-            /* display: flex; */
-            width: 320px;
-            height: 150px;
-            /* background-color: rgb(51, 50, 50); */
-            background-color: linear-gradient(to bottom, black 0%, transparent 100%);
-        }
-    
-        .info h2{
-            font-size: 10px;
-        }
-    
-        .info p{
-            font-size: 8px;
-        }
-    
-        .gallery{
-            max-width: 320px;
-            height: auto;
-        }
-
-        .gallery-title{
-            max-width: 320px;
-        }
-        
-        .dropdown{
-            max-width: 320px;
-        }
-    
-        .gallery-filters{
-            max-width: 320px;
-        }
-
-        .gallery-filters a{
-            font-size: 10px;
-        }
-    
-        .image{
-            padding: 0;
-            margin: 0;
-        }
-    
-        .About img{
-            height: 80%;
-            width: 60%;  
-            padding: 0;
-            margin: 0;
-            /* display: none; */
-        }
-    
-        .second-quote{
-            font-size: 0.40rem;
-            position: relative;
-            top: -90px;
-            right: 5px;
-            /* display: none; */
-            /* width: 400px; */
-        }
-    
-        .paragraph{
-            font-size: 7px;
-        }
-    
-        .paragraph-2{
-            font-size: 7px;
-        }
-        
-        .bi-instagram{
-            width: 12px;
-            height: 12px;
-        }
-}
-
-@media only screen and (max-width: 281px) { 
-
-    .hamburger-menu{
-        height: 18px;
-    }
-
-    .hamburger-menu .line{
-        background-color: #fafafa;
-        height: 1.5px;
-        width: 14px;
-        margin: 3px;
-    }
-
-    .logo{
-        margin: 0;
-        padding: 0;
-    }
-
-    .logo img{
-        height: 30px;
-    }
-
-    .top-nav{
-        max-width: 280px;
-    }
-
-    .gallery-filters a{
-        font-size: 12px;
-    }
-
-    .image-filter{
-        height: 106vh;
-    }
-
-    #Items{
-        /* display: none; */
-        position: absolute;
-        top: 64px;
-        /* display: flex; */
-        width: 280px;
-        height: 150px;
-        /* background-color: rgb(51, 50, 50); */
-        background-color: linear-gradient(to bottom, black 0%, transparent 100%);
-    }
-
-    .info h2{
-        font-size: 7px;
-    }
-
-    .info p{
-        font-size: 7px;
-    }
-
-    .gallery{
-        max-width: 280px;
-        height: auto;
-    }
-
-    .gallery-title{
-        max-width: 280px;
-    }
-    
-    .dropdown{
-        max-width: 280px;
-    }
-
-    .gallery-filters{
-        max-width: 280px;
-    }
-
-    .gallery-filters a{
-        font-size: 8px;
-    }
-
-    .image{
-        padding: 0;
-        margin: 0;
-    }
-
-    .About img{
-        height: 70%;
-        width: 50%;  
-        padding: 0;
-        margin: 0;
-        /* display: none; */
-    }
-
-    .second-quote{
-        font-size: 0.32rem;
-        position: relative;
-        top: -90px;
-        right: -4px;
-        /* display: none; */
-        /* width: 400px; */
-    }
-
-    .paragraph{
-        font-size: 6px;
-    }
-
-    .paragraph-2{
-        font-size: 6px;
-    }
-    
-    .bi-instagram{
-        width: 12px;
-        height: 12px;
-    }
-
-} 
-
-
-
-
-
-/* width */
- /* ::-webkit-scrollbar {
-    width: 14px;
-    background-color: rgb(216, 216, 216); 
-  }  */
-  
-  /* Track */
-   /* ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px rgb(199, 199, 199); 
-    border-radius: 30px 30px 30px 30px;
-  }  */
-   
-  /* Handle */
-   /* ::-webkit-scrollbar-thumb {
-    border-radius: 30px 30px 30px 30px;
-    background: #474645; 
-  }  */
-  
-  /* Handle on hover */
-   /* ::-webkit-scrollbar-thumb:hover {
-    background: rgb(71, 70, 70); 
-  }  */
-
-  .on {
-    color: rgb(197, 115, 22);
-    transition: all 0.2s ease;
-}
