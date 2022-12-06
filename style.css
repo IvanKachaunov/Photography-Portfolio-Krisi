@@ -19,6 +19,18 @@
     height: 80px;
 }  
 
+.hamburger-menu-links{
+    display: none;
+}
+
+.mobile-menu{
+    display: none;
+}
+
+#exit{
+    display: none;
+}
+
 .top-nav{
     display: flex;
     /* justify-content: space-between; */
@@ -32,7 +44,6 @@
     opacity: 0.80;
     position: fixed;
     top: 0;
-    z-index: 999;
     transition: 0.3s;
     /* padding-top: 30px; */
 }
@@ -337,9 +348,10 @@
 }
 
 .top-curves-container{
+    background-color: rgb(245, 245, 245);
     background-image: url("img/curves/layered-waves-haikei\ \(24\).svg");
     background-size: cover;
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat; */
     /* background-repeat: no-repeat; */
     width: 100%;
     display: flex;
@@ -574,31 +586,842 @@ color: rgb(236, 236, 236);
     }
 }
 
-/* For mobile and tablet */
+@media (max-width: 1200px){
 
-/* .hamburger-menu{
-    display: block;
-    margin-right: 50px;
+    .top-nav-links{
+        margin-right: 20px;
+    }
+
+    .top-curves-container {
+        padding: 140px 40px;
+    }
+
+    .About{
+        padding: 90px 80px;
+    }
+}
+
+@media (max-width: 1000px){
+
+    #blackCard {
+        /* height: 275px; */
+        padding: 20px 20px;
+    }
+
+    .blackCardImage{
+        width: 40%;
+    }
+
+    .top-curves-container {
+        padding: 120px 40px;
+    }
+
+    .About{
+        padding: 70px 80px;
+    }
+}
+
+@media (max-width: 900px){
+
+    .top-curves-container {
+        padding: 100px 40px;
+    }
+
+    .About{
+        padding: 50px 80px;
+    }
+
+    .image-background h3{
+        width: 50%;
+    }
+
+}
+
+@media (max-width: 800px){
+
+.logo img{
+    height: 75px;
+}
+
+.image-background h3{
+    width: 40%;
+    font-size: 16px;
+}
+
+.image-background a{
+    padding: 15px 35px;
+    font-size: 16px;
+}
+
+.top-nav{
+    background: linear-gradient(to bottom, black 0%, transparent 100%);
+    justify-content: space-between;
+}
+
+.top-nav.scrolledIn{
+    background: linear-gradient(to bottom, black 0%, transparent 100%);
+}
+
+.top-nav.collapsing-menu-up{
+    background: linear-gradient(to bottom, black 0%, transparent 100%);
+}
+
+.top-nav.collapsing-menu-down{
+    background: linear-gradient(to bottom, black 0%, transparent 100%);
+}
+
+.mobile-menu{
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 40px;
+    height: 15px;
 }
-.hamburger-menu .line{
+
+.mobile-menu span{
+    height: 0.5px;
+    width: 20px;
+    background-color: #fff;
+}
+
+.top-nav-links{
+    display: none;
+}
+
+.hamburger-menu-links{
+    display: flex;
+    width: 300px;
+    height: 50vh;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 10px;
+    justify-content: space-evenly;
+}
+
+.hamburger-menu-links li{
+    list-style: none;
+    position: relative;
+}
+
+.hamburger-menu-links a{
+    text-decoration: none;
+    font-size: 17px;
+    /* font-family: 'Poppins', sans-serif; */
+    color: #fff;
+}
+
+.hamburger-menu-links a::after{
+    content: "";
+    width: 50%;
+    height: 0.5px;
+    background-color: rgb(197, 127, 22);
+    position: absolute;
+    bottom: -4px;
+    left: 0px;
+}
+
+.gg-close {
+    box-sizing: border-box;
+    position: relative;
     display: block;
-    background-color: #fafafa;
-    height: 3px;
-    width: 25px;
-    margin: 5px;
+    transform: scale(var(--ggs,1));
+    width: 22px;
+    height: 22px;
+    border: 2px solid transparent;
+    border-radius: 40px;
 }
-.hamburger-menu.active .line:nth-child(1) {
-transition: 0.2s ease all;
-transform: translateY(8px) rotate(45deg);
+.gg-close::after,
+.gg-close::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    width: 22px;
+    height: 1.5px;
+    margin-left: 5px;
+    background: currentColor;
+    transform: rotate(45deg);
+    border-radius: 5px;
+    top: 8px;
+    left: 1px
+}
+.gg-close::after {
+    transform: rotate(-45deg)
 }
 
-.hamburger-menu.active .line:nth-child(2) {
-opacity: 0;
+.hamburger-menu{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    height: 100vh;
+    width: 300px;
+    background-color: rgb(28, 28, 28);
+    box-shadow: 0 40px 60px rgba(0, 0, 0, 0.01);
+    padding: 40px 0 80px 0px;
+    /* z-index: ; */
+    transition: 0.3s ease all;
 }
 
-.hamburger-menu.active .line:nth-child(3) {
-transition: 0.2s ease all;
-transform: translateY(-8px) rotate(-45deg);
-} */
+#exit{
+    display: block;
+    cursor: pointer;
+    /* padding-left: 10px; */
+    font-size: 22px;
+    color: #fff;
+}
 
+.gallery{
+    padding: 10px 20px 10px 20px;
+}
+
+.oneline-galleryInfo{
+    padding: 40px 20px;
+}
+
+.gallery-filters li a{
+    font-size: 14px;
+}
+
+.photo{
+    padding-bottom: 2.5px;
+}
+
+.gallery-title{
+    font-size: 25px;
+}
+
+.gallery-filters a{
+    font-size: 15px;
+}
+
+.top-curves-container {
+    padding: 100px 40px;
+}
+
+#blackCard {
+    height: 275px;
+    padding: 20px 20px;
+}
+
+.blackCardText{
+    width: 40%;
+}
+
+.blackCardText p{
+    font-size: 13px;
+}
+
+.blackCardImage{
+    width: 50%;
+}
+
+.About{
+    padding: 90px 80px;
+}
+
+.social-media-links{
+    height: 0px;
+}
+
+.social-media-links{
+    font-size: 2px;
+}
+
+.social-media-links img{
+    height: 30px;
+    width: 30px;
+}
+
+.bi-facebook{
+    height: 30px;
+    width: 30px;
+}
+
+.bi-instagram{
+    height: 30px;
+    width: 30px;
+}
+
+.form-section {
+    padding: 40px 40px 140px 40px;
+}
+
+.form-section h3{
+    font-size: 27px;
+}
+
+.form-section input{
+    width: 160px;
+}
+
+.form-section textarea{
+    width: 160px;
+}
+
+.form-section button{
+    width: 100px;
+    font-size: 13px;
+}
+
+.footer-section{
+    padding: 25px 20px;
+}
+
+.footer-section p{
+    font-size: 14px;
+}
+
+}
+
+@media (max-width: 700px){
+
+    .top-curves-container {
+        padding: 80px 40px;
+    }
+
+    .About{
+        padding: 70px 80px;
+    }
+
+    .image-background h3{
+        width: 50%;
+    }
+
+    #blackCard {
+        height: 250px;
+        padding: 20px 20px;
+    }
+
+    .blackCardText{
+        width: 35%;
+    }
+
+    .blackCardText p{
+        font-size: 12px;
+    }
+
+    .social-media-links img{
+        height: 28px;
+        width: 28px;
+    }
+    
+    .bi-facebook{
+        height: 28px;
+        width: 28px;
+    }
+    
+    .bi-instagram{
+        height: 28px;
+        width: 28px;
+    }
+
+}
+
+@media (max-width: 600px){
+    .footer-section p{
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 550px){
+
+    .logo img{
+        height: 65px;
+    }
+
+    .hamburger-menu{
+        width: 200px;
+    }
+
+    .hamburger-menu-links a{
+        font-size: 15px;
+    }
+    
+    .image-background{
+        padding: 0 40px;
+    }
+
+    .image-background h3{
+        width: 60%;
+        font-size: 14px;
+    }
+
+    .oneline-galleryInfo{
+        padding: 30px 20px;
+    }
+
+    .gallery-filters li{
+        padding-right: 15px;
+    }
+
+    .gallery-filters li a{
+        font-size: 13px;
+    }
+
+    .social-media-links img{
+        height: 26px;
+        width: 26px;
+    }
+    
+    .bi-facebook{
+        height: 26px;
+        width: 26px;
+    }
+    
+    .bi-instagram{
+        height: 26px;
+        width: 26px;
+    }
+
+    .footer-section p{
+        font-size: 12px;
+    }
+
+    #blackCard {
+        height: 250px;
+        padding: 40px 20px;
+    }
+
+    .form-section button{
+        height: 30px;
+        width: 100px;
+        font-size: 12px;
+    }
+
+    .footer-section{
+        padding: 25px 30px;
+    }
+
+    .footer-section p{
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 500px){
+    
+    .image-background h3{
+        width: 50%;
+        font-size: 14px;
+    }
+    
+    .image-background a{
+        padding: 12.5px 30px;
+        font-size: 15px;
+    }
+
+    .hamburger-menu{
+       width: 200px;
+    }
+
+    .hamburger-menu-links a{
+        font-size: 15px;
+    }
+
+    .image-background{
+        padding: 0 40px;
+        background-position: top 0 right 45%;
+    }
+
+    .gallery{
+        padding: 10px 5px 10px 5px;
+    }
+
+    .gallery-title{
+        font-size: 20px;
+    }
+
+    .gallery-filters{
+        width: 20%;
+    }
+
+    .gallery-filters li{
+        padding-right: 15px;
+    }
+
+    .gallery-filters li a{
+        font-size: 12px;
+    }
+
+    .top-curves-container {
+        padding: 60px 40px;
+    }
+
+    .About{
+        padding: 60px 80px;
+    }
+
+    .social-media-links img{
+        height: 26px;
+        width: 26px;
+    }
+    
+    .bi-facebook{
+        height: 26px;
+        width: 26px;
+    }
+    
+    .bi-instagram{
+        height: 26px;
+        width: 26px;
+    }
+
+    #blackCard {
+        height: 225px;
+        padding: 40px 20px;
+    }
+
+    .blackCardText p{
+        font-size: 10px;
+    }
+
+    .footer-section p{
+        font-size: 11px;
+    }
+
+}
+
+@media (max-width: 449px){
+
+    .logo img{
+        height: 60px;   
+    }
+
+    .image-background h3{
+        width: 50%;
+        font-size: 13px;
+    }
+    
+    .image-background a{
+        padding: 13px 25px;
+        font-size: 15px;
+    }
+
+    .gallery-filters li a{
+        font-size: 10px;
+    }
+
+    .About{
+        padding: 55px 80px;
+    }
+
+    .social-media-links img{
+        height: 24px;
+        width: 24px;
+    }
+    
+    .bi-facebook{
+        height: 24px;
+        width: 24px;
+    }
+    
+    .bi-instagram{
+        height: 24px;
+        width: 24px;
+    }
+    
+    .blackCardText p{
+        font-size: 9px;
+    }
+
+    .form-section {
+        padding: 60px 40px 140px 40px;
+    }
+
+    .form-section h3{
+        font-size: 25px;
+    }
+
+    .form-section input::placeholder{
+        font-size: 12px;
+    }
+
+    .form-section textarea::placeholder{
+        font-size: 12px;
+    }
+    
+    .form-section input{
+        width: 130px;
+    }
+    
+    .form-section textarea{
+        width: 130px;
+    }
+    
+    .form-section button{
+        width: 100px;
+        font-size: 12px;
+    }
+
+    .footer-section p{
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 400px){
+
+    .image-background {
+        padding: 0 40px;
+        background-position: top 0 right 35%
+    }
+
+    .hamburger-menu{
+        width: 150px;
+    }
+
+    .gg-close::after,
+    .gg-close::before {
+        width: 20px;
+    }
+
+    .hamburger-menu-links a{
+        font-size: 14px;
+    }
+
+    .image-background h3{
+        width: 50%;
+        font-size: 12px;
+    }
+    
+    .image-background a{
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+
+    .oneline-galleryInfo{
+        padding: 30px 10px;
+    }
+
+    .gallery-title{
+        font-size: 18px;
+    }
+
+    .gallery-filters {
+        width: 100%;
+    }
+
+    .gallery-filters li{
+        padding-right: 15px;
+    }
+
+    .gallery-filters li a{
+        font-size: 10px;
+    }
+
+    .top-curves-container{
+        padding: 50px 40px;
+    }
+
+    .About{
+        padding: 50px 80px;
+    }
+
+    .social-media-links img{
+        height: 20px;
+        width: 20px;
+    }
+    
+    .bi-facebook{
+        height: 20px;
+        width: 20px;
+    }
+    
+    .bi-instagram{
+        height: 20px;
+        width: 20px;
+    }
+    
+    .blackCardText p{
+        font-size: 8px;
+    }
+
+    .form-section {
+        padding: 60px 40px 140px 40px;
+    }
+
+    .form-section h3{
+        font-size: 23px;
+    }
+
+    .form-section input::placeholder{
+        font-size: 11px;
+    }
+
+    .form-section textarea::placeholder{
+        font-size: 11px;
+    }
+    
+    .form-section input{
+        width: 120px;
+    }
+    
+    .form-section textarea{
+        width: 120px;
+    }
+    
+    .form-section button{
+        width: 80px;
+        font-size: 10px;
+    }
+
+    .footer-section p{
+        font-size: 8.5px;
+    }
+}
+
+@media (max-width: 350px){
+
+    .hamburger-menu {
+        width: 120px
+    }
+
+    .hamburger-menu-links a{
+        font-size: 12px;
+    }
+
+    .image-background h3{
+        font-size: 11px;
+    }
+
+    .image-background a {
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+    
+    .gallery-title{
+        font-size: 16px;
+    }
+
+    .gallery-filters li a{
+        font-size: 9px;
+    }
+
+    .top-curves-container {
+        padding: 40px 40px;
+    }
+
+    .blackCardImage{
+        width: 55%;
+    }
+
+    .blackCardText p{
+        font-size: 7px;
+    }
+
+    .social-media-links img{
+        height: 18px;
+        width: 18px;
+    }
+    
+    .bi-facebook{
+        height: 18px;
+        width: 18px;
+    }
+    
+    .bi-instagram{
+        height: 18px;
+        width: 18px;
+    }
+
+    .footer-section p{
+        font-size: 7px;
+    }
+
+    .form-section h3{
+        font-size: 20px;
+    }
+
+    .form-section input::placeholder{
+        font-size: 9px;
+    }
+
+    .form-section textarea::placeholder{
+        font-size: 9px;
+    }
+    
+    .form-section input{
+        width: 100px;
+    }
+    
+    .form-section textarea{
+        width: 100px;
+    }
+    
+    .form-section button{
+        width: 70px;
+        font-size: 9px;
+    }
+
+}
+
+@media (max-width: 320px){
+
+    .image-background{
+        padding: 0 20px
+    }
+
+    .logo{
+        margin: 0;
+    }
+
+    .logo img{
+        height: 55px;
+    }
+
+    .hamburger-menu {
+        width: 100px
+    }
+
+    .image-background h3{
+        width: 60%;
+    }
+
+    .About {
+        padding: 45px 60px;
+    }
+
+    .gallery-title{
+        font-size: 14px;
+    }
+
+    .gallery-filters li a{
+        font-size: 8px;
+    }
+    
+}
+
+@media (max-width: 280px){
+
+    .logo img{
+        height: 50px;
+    }
+
+    .image-background h3{
+        font-size: 10px;
+    }
+
+    .image-background a{
+        font-size: 12px;
+    }
+
+    .blackCardText p{
+        font-size: 7px;
+    }
+
+    .gallery-filters li{
+        padding-right: 10px;
+    }
+
+    .gallery-filters li a{
+        font-size: 7px;
+    }
+
+    .footer-section p{
+        font-size: 6px;
+    }
+}
