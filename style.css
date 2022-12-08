@@ -1,3 +1,7 @@
+/* @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@300&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100&family=Source+Serif+Pro:wght@1000&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100&family=Source+Serif+Pro&display=swap'); */
 *{
     box-sizing: border-box;
     padding: 0;
@@ -235,8 +239,10 @@
 
 .gallery-title{
     font-size: 28px;
-    font-family: monospace;
-    font-family: 'Dancing Script', cursive;
+    /* font-family: monospace; */
+    /* font-family: 'Dancing Script', cursive; */
+    /* font-family: 'League Spartan', sans-serif; */
+    font-family: 'Source Serif Pro', serif;
     /* font-family: 'Poppins', sans-serif; */
     text-transform: uppercase;
     /* background-color: rgb(245, 245, 245); */
@@ -429,12 +435,6 @@
     font-size: 25px;
 }
 
-.social-media-links img{
-    width: 35px;
-    height: 35px;
-    animation: animateCherryDeck 7s ease-in-out infinite;
-}
-
 .bi-facebook{
     width: 35px;
     height: 35px;
@@ -455,6 +455,17 @@
     animation: animateInstagram 7s ease-in-out infinite;
 }
 
+.bi-youtube{
+    width: 35px;
+    height: 35px;
+    /* margin-bottom: 190px; */
+    cursor: pointer;
+    /* background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%); */
+    border-radius: 30%;
+    /* color: rgb(123, 33, 141); */
+    animation: animateInstagram 6.5s ease-in-out infinite;
+}
+
 .form-section{
     display: flex;
     background-color: rgb(237, 237, 237);
@@ -468,7 +479,9 @@
     margin-bottom: 30px;
     text-align: center;
     font-size: 30px;
-    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
+    /* font-family: 'League Spartan', sans-serif; */
+    font-family: 'Source Serif Pro', serif;
     font-weight: 100;
 }
 
@@ -523,6 +536,7 @@
 }
 
 .paragraph{
+font-family: 'Source Serif Pro', serif;
   position: absolute;
   top: 30%;
   left: 50%;
@@ -531,6 +545,7 @@
 }
 
 .paragraph-2 {
+font-family: 'Source Serif Pro', serif;
 position: absolute;
 top: 70%;
 left: 50%;
@@ -709,6 +724,7 @@ color: rgb(236, 236, 236);
     text-decoration: none;
     font-size: 17px;
     /* font-family: 'Poppins', sans-serif; */
+    font-family: 'Source Serif Pro', serif;
     color: #fff;
 }
 
@@ -777,7 +793,29 @@ color: rgb(236, 236, 236);
 }
 
 .gallery{
+    display: grid;
+    flex-direction: column;
+    grid-template-columns: auto auto;
     padding: 10px 20px 10px 20px;
+}
+
+.column{
+    width: 100%;
+}
+
+.column:nth-child(3){
+    display: grid;
+    align-items: flex-start;
+    grid-template-columns: auto auto;
+    grid-column: 1 / span 2;
+}
+
+#c2-p3{
+    height: 40%;
+}
+
+.photo{
+    padding: 2.5px;
 }
 
 .oneline-galleryInfo{
@@ -788,9 +826,9 @@ color: rgb(236, 236, 236);
     font-size: 14px;
 }
 
-.photo{
+/* .photo{
     padding-bottom: 2.5px;
-}
+} */
 
 .gallery-title{
     font-size: 25px;
@@ -833,11 +871,6 @@ color: rgb(236, 236, 236);
     font-size: 2px;
 }
 
-.social-media-links img{
-    height: 30px;
-    width: 30px;
-}
-
 .bi-facebook{
     height: 30px;
     width: 30px;
@@ -845,6 +878,11 @@ color: rgb(236, 236, 236);
 
 .bi-instagram{
     height: 30px;
+    width: 30px;
+}
+
+.bi-youtube{
+    height: 30p;
     width: 30px;
 }
 
@@ -905,11 +943,6 @@ color: rgb(236, 236, 236);
     .blackCardText p{
         font-size: 12px;
     }
-
-    .social-media-links img{
-        height: 28px;
-        width: 28px;
-    }
     
     .bi-facebook{
         height: 28px;
@@ -921,11 +954,20 @@ color: rgb(236, 236, 236);
         width: 28px;
     }
 
+    .bi-youtube{
+        height: 28px;
+        width: 28px;
+    }
+
 }
 
 @media (max-width: 600px){
     .footer-section p{
         font-size: 12px;
+    }
+
+    .logo{
+        margin: 0;
     }
 }
 
@@ -963,11 +1005,6 @@ color: rgb(236, 236, 236);
     .gallery-filters li a{
         font-size: 13px;
     }
-
-    .social-media-links img{
-        height: 26px;
-        width: 26px;
-    }
     
     .bi-facebook{
         height: 26px;
@@ -975,6 +1012,11 @@ color: rgb(236, 236, 236);
     }
     
     .bi-instagram{
+        height: 26px;
+        width: 26px;
+    }
+
+    .bi-youtube{
         height: 26px;
         width: 26px;
     }
@@ -1055,11 +1097,6 @@ color: rgb(236, 236, 236);
     .About{
         padding: 60px 80px;
     }
-
-    .social-media-links img{
-        height: 26px;
-        width: 26px;
-    }
     
     .bi-facebook{
         height: 26px;
@@ -1067,6 +1104,11 @@ color: rgb(236, 236, 236);
     }
     
     .bi-instagram{
+        height: 26px;
+        width: 26px;
+    }
+
+    .bi-youtube{
         height: 26px;
         width: 26px;
     }
@@ -1109,11 +1151,6 @@ color: rgb(236, 236, 236);
     .About{
         padding: 55px 80px;
     }
-
-    .social-media-links img{
-        height: 24px;
-        width: 24px;
-    }
     
     .bi-facebook{
         height: 24px;
@@ -1121,6 +1158,11 @@ color: rgb(236, 236, 236);
     }
     
     .bi-instagram{
+        height: 24px;
+        width: 24px;
+    }
+
+    .bi-youtube{
         height: 24px;
         width: 24px;
     }
@@ -1201,6 +1243,26 @@ color: rgb(236, 236, 236);
         font-size: 18px;
     }
 
+    .gallery{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+        
+    .column:nth-child(3){
+        grid-template-columns: auto;
+    }
+
+    .column{
+        width: 75%;
+        align-items: center;
+        grid-template-columns: auto;
+    }
+
+    #c2-p3{
+        height: 100%;
+    }
+
     .gallery-filters {
         width: 100%;
     }
@@ -1220,11 +1282,6 @@ color: rgb(236, 236, 236);
     .About{
         padding: 50px 80px;
     }
-
-    .social-media-links img{
-        height: 20px;
-        width: 20px;
-    }
     
     .bi-facebook{
         height: 20px;
@@ -1232,6 +1289,11 @@ color: rgb(236, 236, 236);
     }
     
     .bi-instagram{
+        height: 20px;
+        width: 20px;
+    }
+
+    .bi-youtube{
         height: 20px;
         width: 20px;
     }
@@ -1312,11 +1374,6 @@ color: rgb(236, 236, 236);
     .blackCardText p{
         font-size: 7px;
     }
-
-    .social-media-links img{
-        height: 18px;
-        width: 18px;
-    }
     
     .bi-facebook{
         height: 18px;
@@ -1324,6 +1381,11 @@ color: rgb(236, 236, 236);
     }
     
     .bi-instagram{
+        height: 18px;
+        width: 18px;
+    }
+
+    .bi-youtube{
         height: 18px;
         width: 18px;
     }
