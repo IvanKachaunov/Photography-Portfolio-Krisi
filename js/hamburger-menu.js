@@ -11,4 +11,3 @@ function myFunction() {
   hamburger.addEventListener("click", () => {
     hamburger.classList.toggle('active')
   });
-  
